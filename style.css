@@ -12,6 +12,187 @@ html, body {
   background-color: rgb(252, 241, 239);
 }
 
+
+/* ===== CONTACT PAGE STYLES ===== */
+#contact-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(252, 241, 239, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 180px;
+  gap: 5px;
+  text-align: center;
+  z-index: 9999;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+#contact-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('media/foreground.png') repeat-x center / cover;
+  animation: scrollBG 10s linear infinite;
+  z-index: -1;
+  filter: blur(4px);
+  opacity: 0.7;
+}
+
+#contact-blur-runner {
+  position: absolute;
+  bottom: 180px;
+  left: 80px;
+  width: 350px;
+  z-index: -1;
+  filter: blur(2px);
+  opacity: 0.8;
+}
+
+#contact-blur-runner img {
+  width: 100%;
+}
+
+#contact-content {
+  padding: 30px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  border: 3px solid #5a2a83;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  margin: 5px auto 0 auto;
+  text-align: center;
+}
+
+#contact-content h2 {
+  font-size: 1.5rem;
+  color: #5a2a83;
+  text-shadow: 2px 2px #fff;
+  margin-bottom: 25px;
+}
+
+.contact-item {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-item i {
+  color: #5a2a83;
+  font-size: 1.2rem;
+}
+
+.contact-item a {
+  color: #5a2a83;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.social-section {
+  margin-top: 30px;
+}
+
+.social-section h3 {
+  font-size: 1rem;
+  color: #5a2a83;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-icons a {
+  color: #5a2a83;
+  font-size: 2rem;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #contact-menu {
+    padding-top: 120px;
+  }
+  
+  #contact-blur-runner {
+    width: 200px;
+    bottom: 120px;
+    left: 40px;
+  }
+  
+  #contact-content {
+    padding: 20px;
+  }
+  
+  #contact-content h2 {
+    font-size: 1.2rem;
+  }
+  
+  .contact-item {
+    font-size: 0.9rem;
+    flex-direction: column;
+  }
+  
+  .social-icons {
+    gap: 20px;
+  }
+  
+  .social-icons a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #contact-menu {
+    padding-top: 80px;
+  }
+  
+  #contact-blur-runner {
+    width: 150px;
+    bottom: 80px;
+    left: 20px;
+  }
+  
+  #contact-content h2 {
+    font-size: 1rem;
+  }
+  
+  .social-section h3 {
+    font-size: 0.9rem;
+  }
+  
+  .social-icons a {
+    font-size: 1.5rem;
+  }
+}
+
+
+
 /* Background Layers */
 #background {
   position: relative;
@@ -1056,29 +1237,12 @@ html, body {
 
 
 
-
-/* Add this to your existing CSS */
 @media (max-width: 768px) {
   /* Adjust main menu positioning */
   #main-menu {
-    padding-top: 80px;
+    padding-top: 60px; /* Reduced from 80px */
     justify-content: flex-start;
-  }
-
-  /* Style the loading message to match about me container */
-  #loading-message {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: 90%;
-    margin: 20px auto 0;
-    padding: 15px;
-    font-size: 14px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 16px;
-    border: 3px solid #5a2a83;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    gap: 10px; /* Add some spacing between elements */
   }
 
   /* Style instructions to match */
@@ -1088,44 +1252,74 @@ html, body {
     left: auto;
     transform: none;
     width: 90%;
-    margin: 10px auto;
-    padding: 15px;
-    font-size: 14px;
+    margin: 5px auto 10px auto; /* Adjusted margins */
+    padding: 12px 15px; /* Slightly less padding */
+    font-size: 13px; /* Slightly smaller font */
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 16px;
     border: 3px solid #5a2a83;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Adjust title - Remove the box styling */
+  #instructions h1 {
+    font-size: 1.2rem !important; /* Smaller size */
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 0 8px 0 !important; /* Tighter margins */
+    color: #5a2a83; /* Ensure color matches */
   }
 
   /* Adjust button positioning */
   #start-btn {
-    margin-top: 20px;
+    margin-top: 15px; /* Reduced from 20px */
     position: relative;
     z-index: 1;
   }
 
-  /* Adjust title */
-  #main-menu h1 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 16px;
-    border: 3px solid #5a2a83;
-    padding: 10px;
-    width: 90%;
-    margin: 0 auto;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Adjust list items spacing */
+  #instructions ul li {
+    margin-bottom: 6px; /* Tighter spacing */
+  }
+
+  /* Make instruction icons smaller */
+  .instruction-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .fly-icon {
+    width: 50px;
+    height: 50px;
   }
 }
 
 /* For very small screens */
-@media (max-width: 380px) {
-  #loading-message,
-  #instructions,
-  #main-menu h1 {
+@media (max-width: 480px) {
+  #main-menu {
+    padding-top: 50px; /* Even less top padding */
+  }
+
+  #instructions {
     width: 95%;
-    padding: 10px;
+    padding: 10px 12px;
     font-size: 12px;
+    margin: 5px auto;
+  }
+
+  #instructions h1 {
+    font-size: 1rem !important;
+  }
+
+  .instruction-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .fly-icon {
+    width: 45px;
+    height: 45px;
   }
 }
-
