@@ -1248,7 +1248,7 @@ html, body {
   /* Instructions box styling */
   #instructions {
     position: relative;
-    width: 84%; /* Slightly narrower than 85% */
+    width: 88%; /* Slightly narrower than 85% */
     margin: 25px auto 15px auto; /* Increased top margin to push down further */
     padding: 16px; /* Balanced padding */
     font-size: 14px; /* Slightly larger for readability */
@@ -1259,14 +1259,6 @@ html, body {
     max-width: 400px; /* Added maximum width */
   }
 
-  /* Title styling */
-  #instructions h1 {
-    font-size: 1.3rem !important; /* Slightly larger */
-    color: #5a2a83 !important;
-    text-shadow: 1px 1px #fff !important;
-    margin: 0 0 12px 0 !important; /* More space below title */
-    letter-spacing: 0.5px; /* Improved readability */
-  }
 
   /* List items adjustments */
   #instructions ul li {
