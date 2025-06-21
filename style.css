@@ -1240,7 +1240,7 @@ html, body {
 @media (max-width: 768px) {
   /* Adjust main menu positioning */
   #main-menu {
-    padding-top: 80px; /* Push content down */
+    padding-top: 120px; /* Push content down */
     justify-content: flex-start;
     gap: 15px;
   }
