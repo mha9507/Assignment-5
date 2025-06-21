@@ -6,7 +6,6 @@
   <title>My Work - 5 Project Scroller</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
-
 * {
   margin: 0;
   padding: 0;
@@ -87,7 +86,7 @@ body {
 .scrolling-container {
   width: 100vw;
   height: 100vh;
-  padding-top: 20px; /* Reduced from 40px */
+  padding-top: 70px; /* Increased to move content down */
   overflow-x: auto;
   overflow-y: hidden;
   position: relative;
@@ -111,10 +110,10 @@ body {
   flex-shrink: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Changed from center */
+  align-items: center;
   position: relative;
   scroll-snap-align: start;
-  padding: 15px 20px; /* Reduced top padding */
+  padding: 30px 20px; /* Increased padding */
 }
 
 /* Project cards */
@@ -122,35 +121,34 @@ body {
   background-color: rgba(255, 255, 255, 0.6);
   border: 3px solid #5a2a83;
   border-radius: 16px;
-  padding: 20px;
-  width: 94%; /* Increased from 90% */
-  max-width: 850px; /* Increased from 800px */
+  padding: 25px;
+  width: 94%;
+  max-width: 850px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(2px);
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 17px; /* Slightly larger */
+  line-height: 1.6;
   position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  margin-top: 10px; /* Added to pull up more */
+  margin-top: 20px; /* Added space below menu */
 }
 
 /* Project image container */
 .project-card .image-container {
   text-align: center;
-  margin: 0 auto 25px; /* Increased bottom margin */
+  margin-bottom: 30px;
   position: relative;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
 }
 
 /* Project image styling */
 .project-card img {
-  max-width: 80%; /* Increased from 70% */
+  max-width: 80%; /* Larger images */
   border-radius: 8px;
   border: 2px solid #5a2a83;
   transition: all 0.3s ease;
@@ -162,7 +160,6 @@ body {
   animation: pulse-glow 3s infinite;
 }
 
-/* Enhanced hover effects for project images */
 .project-card img:hover {
   transform: scale(1.03);
   box-shadow: 0 0 25px rgba(90, 42, 131, 0.8);
@@ -195,21 +192,18 @@ body {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-/* Hover state for click hint */
 .project-card .image-container:hover::after {
   opacity: 1;
   bottom: -25px;
   animation: pulse-attention 1.5s infinite;
 }
 
-/* Pulsing animation for extra attention */
 @keyframes pulse-attention {
   0% { transform: translateX(-50%) scale(1); }
   50% { transform: translateX(-50%) scale(1.05); }
   100% { transform: translateX(-50%) scale(1); }
 }
 
-/* Pulsing effect for clickable images */
 @keyframes pulse-glow {
   0% { box-shadow: 0 0 5px rgba(90, 42, 131, 0.3); }
   50% { box-shadow: 0 0 15px rgba(90, 42, 131, 0.7); }
@@ -218,10 +212,10 @@ body {
 
 .project-card h2 {
   color: #5a2a83;
-  margin-bottom: 30px; /* Increased from 20px */
+  margin-bottom: 30px; /* More spacing */
   text-shadow: 2px 2px #fff;
   text-align: center;
-  font-size: 1.6rem; /* Increased from 1.5rem */
+  font-size: 1.7rem; /* Larger */
   overflow: hidden;
   border-right: 2px solid #5a2a83;
   white-space: nowrap;
@@ -231,8 +225,8 @@ body {
 }
 
 .project-card p {
-  font-size: 17px; /* Increased from 16px */
-  line-height: 1.6; /* Increased from 1.5 */
+  font-size: 17px;
+  line-height: 1.6;
   color: #333;
   margin-bottom: 15px;
 }
@@ -287,7 +281,6 @@ body {
   pointer-events: none;
 }
 
-/* Typing animation */
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
@@ -302,7 +295,7 @@ body {
 @media (max-width: 1000px) {
   .runner {
     width: 150px;
-    bottom: 90px;
+    bottom: 100px;
     left: 40px;
   }
   
@@ -311,16 +304,16 @@ body {
   }
   
   .project-card {
-    padding: 20px;
+    padding: 22px;
   }
   
   .project-card h2 {
-    font-size: 1.4rem; /* Increased from 1.2rem */
-    margin-bottom: 25px; /* Increased spacing */
+    font-size: 1.5rem;
+    margin-bottom: 25px;
   }
   
   .project-card p {
-    font-size: 15px; /* Increased from 14px */
+    font-size: 16px;
   }
   
   .nav-arrow {
@@ -340,12 +333,16 @@ body {
 }
 
 @media (max-width: 768px) {
+  .scrolling-container {
+    padding-top: 65px;
+  }
+
   .project-card h2 {
     white-space: normal;
     border-right: none;
     animation: none;
-    font-size: 1.3rem; /* Slightly larger */
-    margin-bottom: 22px; /* Increased spacing */
+    font-size: 1.4rem;
+    margin-bottom: 22px;
   }
   
   .project-card .image-container::after {
@@ -354,7 +351,7 @@ body {
   }
 
   .project-card img {
-    max-width: 85%; /* Larger images */
+    max-width: 85%;
   }
 }
 
@@ -367,40 +364,40 @@ body {
     height: 100px;
   }
   
+  .scrolling-container {
+    padding-top: 60px;
+  }
+  
   .project-card {
-    padding: 18px; /* Slightly more padding */
-    min-height: 70vh;
-    margin-top: 10px; /* Moved up more */
-    width: 96%; /* Wider cards */
+    padding: 20px;
+    min-height: 65vh;
+    margin-top: 15px;
+    width: 96%;
   }
   
   .project-card h2 {
-    font-size: 1.2rem; /* Increased from 1rem */
-    margin: 15px 0 25px 0; /* More spacing */
+    font-size: 1.3rem;
+    margin: 15px 0 25px 0;
   }
   
   .project-card p {
-    font-size: 14px; /* Increased from 12px */
-    margin-bottom: 12px;
-    line-height: 1.7; /* More spacing */
+    font-size: 15px;
+    line-height: 1.7;
   }
 
   .project-card img {
-    max-width: 95%; /* Larger images */
-    transform: scale(1.15); /* Increased from 1.1 */
-  }
-
-  .project-card .image-container {
-    margin-bottom: 20px; /* More spacing */
+    max-width: 95%;
+    transform: scale(1.15);
   }
 
   .runner {
-    bottom: 32vh; /* Adjusted position */
+    bottom: 25vh;
+    width: 120px;
   }
 
   .project-card .image-container::after {
     content: "TAP TO VIEW →";
-    font-size: 11px; /* Slightly larger */
+    font-size: 11px;
     padding: 6px 12px;
     bottom: -18px;
   }
@@ -413,7 +410,7 @@ body {
 @media (max-width: 450px) {
   .runner {
     width: 100px;
-    bottom: 30vh; /* Adjusted position */
+    bottom: 22vh;
     left: 20px;
   }
   
@@ -427,20 +424,24 @@ body {
     height: 70px;
   }
   
+  .scrolling-container {
+    padding-top: 55px;
+  }
+  
   .project-card {
-    padding: 16px;
-    min-height: 65vh;
-    margin-top: 8px; /* Moved up more */
-    width: 97%; /* Slightly wider */
+    padding: 18px;
+    min-height: 60vh;
+    margin-top: 12px;
+    width: 97%;
   }
   
   .project-card h2 {
-    font-size: 1.05rem; /* Increased from 0.85rem */
-    margin: 12px 0 22px 0; /* More spacing */
+    font-size: 1.1rem;
+    margin: 12px 0 22px 0;
   }
   
   .project-card p {
-    font-size: 13px; /* Increased from 11px */
+    font-size: 14px;
     line-height: 1.65;
   }
   
@@ -450,13 +451,13 @@ body {
   }
 
   .project-card img {
-    max-width: 98%; /* Larger images */
-    transform: scale(1.25); /* Increased from 1.2 */
+    max-width: 98%;
+    transform: scale(1.25);
   }
 
   .project-card .image-container::after {
     content: "TAP →";
-    font-size: 9px; /* Slightly larger */
+    font-size: 9px;
     padding: 5px 10px;
     bottom: -15px;
   }
