@@ -1240,7 +1240,7 @@ html, body {
 @media (max-width: 768px) {
   /* Adjust main menu positioning */
   #main-menu {
-    padding-top: 120px; /* Push content down */
+    padding-top: 180px; /* Push content down */
     justify-content: flex-start;
     gap: 15px;
   }
@@ -1259,7 +1259,7 @@ html, body {
   /* Instructions box styling */
   #instructions {
     width: 92%; /* Slightly wider */
-    margin: 40px auto 20px auto; /* Pushed downward with top margin */
+    margin: 80px auto 20px auto; /* Pushed downward with top margin */
     padding: 20px 16px 16px 16px; /* Adjusted padding */
     font-size: 14px;
     background-color: rgba(255, 255, 255, 0.65);
