@@ -1240,24 +1240,35 @@ html, body {
 @media (max-width: 768px) {
   /* Adjust main menu positioning */
   #main-menu {
-    padding-top: 60px; /* Reduced from 80px */
+    padding-top: 80px; /* Push content down */
     justify-content: flex-start;
-    gap: 10px; /* Add some spacing between elements */
+    gap: 15px;
+  }
+
+    #instructions h1 {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 0 15px 0 !important;
+    color: #5a2a83;
+    text-shadow: 2px 2px #fff;
+    font-size: 24px;
   }
 
   /* Instructions box styling */
   #instructions {
-    position: relative;
-    width: 88%; /* Slightly narrower than 85% */
-    margin: 40px auto 15px auto; /* Increased top margin to push down further */
-    padding: 16px; /* Balanced padding */
-    font-size: 14px; /* Slightly larger for readability */
-    background-color: rgba(255, 255, 255, 0.65); /* Slightly more opaque */
-    border-radius: 14px; /* Slightly tighter radius */
-    border: 2px solid #5a2a83; /* Thinner border */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow */
-    max-width: 400px; /* Added maximum width */
+    width: 92%; /* Slightly wider */
+    margin: 40px auto 20px auto; /* Pushed downward with top margin */
+    padding: 20px 16px 16px 16px; /* Adjusted padding */
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 14px;
+    border: 2px solid #5a2a83;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    max-width: 420px;
   }
+
 
 
   /* List items adjustments */
