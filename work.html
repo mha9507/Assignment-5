@@ -131,6 +131,9 @@ body {
   line-height: 1.5;
   position: relative;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Project image container */
@@ -138,6 +141,10 @@ body {
   text-align: center;
   margin-bottom: 30px;
   position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Project image styling */
@@ -354,13 +361,12 @@ body {
   
   .project-card {
     padding: 15px;
-    /* More compact vertical size */
-    min-height: 55vh;
-    /* Proper spacing below menu */
-    margin-top: 80px;
-    /* Better content distribution */
+    min-height: 70vh;
+    margin-top: 20px;
     justify-content: flex-start;
-    padding-top: 20px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
   }
   
   .project-card h2 {
@@ -373,19 +379,22 @@ body {
     margin-bottom: 10px;
   }
 
-  /* Larger project images */
   .project-card img {
-    max-width: 95%;
+    max-width: 90%;
     margin: 10px auto;
-    transform: scale(1.25);
+    transform: scale(1.1);
   }
 
   .project-card .image-container {
     margin-bottom: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .runner {
-    bottom: 25vh;
+    bottom: 30vh;
   }
 
   .project-card .image-container::after {
@@ -403,7 +412,7 @@ body {
 @media (max-width: 450px) {
   .runner {
     width: 100px;
-    bottom: 22vh;
+    bottom: 28vh;
     left: 20px;
   }
   
@@ -419,9 +428,8 @@ body {
   
   .project-card {
     padding: 12px;
-    /* Very compact for smallest phones */
-    min-height: 50vh;
-    margin-top: 70px;
+    min-height: 65vh;
+    margin-top: 15px;
   }
   
   .project-card h2 {
@@ -437,10 +445,9 @@ body {
     height: 35px;
   }
 
-  /* Largest images on smallest screens */
   .project-card img {
-    max-width: 105%;
-    transform: scale(1.35);
+    max-width: 95%;
+    transform: scale(1.2);
   }
 
   .project-card .image-container::after {
