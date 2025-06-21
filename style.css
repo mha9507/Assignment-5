@@ -1245,32 +1245,47 @@ html, body {
     gap: 10px; /* Add some spacing between elements */
   }
 
-  /* Style instructions to match */
+  /* Instructions box styling */
   #instructions {
     position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: 90%;
-    margin: 5px auto 10px auto; /* Adjusted margins */
-    padding: 12px 15px; /* Slightly less padding */
-    font-size: 13px; /* Slightly smaller font */
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 16px;
-    border: 3px solid #5a2a83;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 84%; /* Slightly narrower than 85% */
+    margin: 25px auto 15px auto; /* Increased top margin to push down further */
+    padding: 16px; /* Balanced padding */
+    font-size: 14px; /* Slightly larger for readability */
+    background-color: rgba(255, 255, 255, 0.65); /* Slightly more opaque */
+    border-radius: 14px; /* Slightly tighter radius */
+    border: 2px solid #5a2a83; /* Thinner border */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    max-width: 400px; /* Added maximum width */
   }
 
-  /* Adjust title - Remove the box styling */
+  /* Title styling */
   #instructions h1 {
-    font-size: 1.2rem !important; /* Smaller size */
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 0 8px 0 !important; /* Tighter margins */
-    color: #5a2a83; /* Ensure color matches */
+    font-size: 1.3rem !important; /* Slightly larger */
+    color: #5a2a83 !important;
+    text-shadow: 1px 1px #fff !important;
+    margin: 0 0 12px 0 !important; /* More space below title */
+    letter-spacing: 0.5px; /* Improved readability */
   }
+
+  /* List items adjustments */
+  #instructions ul li {
+    margin-bottom: 10px; /* More space between items */
+    line-height: 1.4; /* Better text flow */
+  }
+
+  /* Instruction icons */
+  .instruction-icon {
+    width: 32px; /* Slightly smaller */
+    height: 32px;
+    margin: 0 6px; /* Tighter margins */
+  }
+  
+  .fly-icon {
+    width: 48px; /* Proportionally smaller */
+    height: 48px;
+  }
+
 
   /* Adjust button positioning */
   #start-btn {
@@ -1296,30 +1311,36 @@ html, body {
   }
 }
 
-/* For very small screens */
+
+
 @media (max-width: 480px) {
+  /* Further adjustments for very small screens */
   #main-menu {
-    padding-top: 50px; /* Even less top padding */
+    padding-top: 50px;
+    gap: 10px;
   }
 
   #instructions {
-    width: 95%;
-    padding: 10px 12px;
-    font-size: 12px;
-    margin: 5px auto;
+    width: 82%;
+    margin: 20px auto 10px auto;
+    padding: 14px;
+    font-size: 13px;
+    border-radius: 12px;
   }
 
   #instructions h1 {
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 10px !important;
   }
 
   .instruction-icon {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
   }
   
   .fly-icon {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
   }
+
 }
