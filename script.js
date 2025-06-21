@@ -425,6 +425,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const runners = [document.getElementById('about-me-runner'), document.getElementById('about-me-runner-mobile')];
   const prompts = [document.getElementById('monster-prompt'), document.getElementById('monster-prompt-mobile')];
 
+
+  // Add this to your existing DOMContentLoaded event listener
+  document.getElementById('about-me-runner-mobile')?.addEventListener('click', function() {
+    this.classList.add('clicked');
+  });
   // Initially hide both elements
   runners.forEach(runner => {
     if (runner) {
