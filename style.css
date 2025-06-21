@@ -741,14 +741,40 @@ html, body {
     padding: 10px;
     margin: 5px 0;
   }
-
-  /* About Me Container */
+/* Update these mobile styles in your existing @media (max-width: 768px) section */
+@media (max-width: 768px) {
+  /* Adjust about me container */
   #about-me-container {
-    top: 55%;
-    max-height: 65vh;
-    overflow-y: auto;
-    padding: 15px;
+    top: 50% !important; /* Move up slightly */
+    max-height: 70vh !important; /* Increase height */
+    padding: 20px 15px !important;
+    transform: translate(-50%, -50%) !important;
   }
+
+  /* Make headings smaller */
+  #about-me-container h1,
+  #about-me-container h2 {
+    font-size: 1.2rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* Adjust info items */
+  .info-item {
+    font-size: 0.9rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Keep click me prompt visible until clicked */
+  #monster-prompt-mobile {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  /* Only hide after runner is clicked */
+  #about-me-runner-mobile.clicked + #monster-prompt-mobile {
+    display: none !important;
+  }
+}
 
   /* Desktop runner hidden on mobile */
   #about-me-runner {
@@ -760,9 +786,6 @@ html, body {
     display: block;
   }
 
-  #monster-prompt-mobile {
-    display: block;
-  }
 
   /* Content adjustments */
   .coding-languages {
