@@ -745,7 +745,6 @@ html, body {
     padding: 10px;
     margin: 5px 0;
   }
-
 /* Update these mobile styles in your existing @media (max-width: 768px) section */
 @media (max-width: 768px) {
   /* Adjust about me container */
@@ -763,6 +762,11 @@ html, body {
     margin-bottom: 15px !important;
   }
 
+  /* Adjust info items */
+  .info-item {
+    font-size: 0.9rem !important;
+    margin-bottom: 10px !important;
+  }
 
   /* Keep click me prompt visible until clicked */
   #monster-prompt-mobile {
@@ -773,55 +777,8 @@ html, body {
   /* Only hide after runner is clicked */
   #about-me-runner-mobile.clicked + #monster-prompt-mobile {
     display: none !important;
-  }
-
-
-  .info-item, .language-item {
-    font-size: 0.8rem !important;
-    margin-bottom: 5px !important;
-  }
-
-  /* Tighten coding languages grid */
-  .coding-languages {
-    gap: 2px 10px !important; /* Reduce gap between items */
-    margin-top: 8px !important;
-    grid-template-columns: 1fr;
-  }
-
-  .language-item {
-    margin:0  !important;
-    padding: 1px 0 !important;
-    line-height: 1.2 !important;
-  }
-
-  /* Adjust mobile runner position */
-  #mobile-runner-container {
-    margin-top: 15px !important; /* Reduce space above runner */
-    margin-bottom: -15px !important; /* Reduce space below */
-  }
-
-  #about-me-runner-mobile {
-    width: 80px !important; /* Slightly smaller */
-    margin-bottom: 0 !important;
-  }
-
-  /* Reduce info section margins */
-  .info-section {
-    margin-bottom: 15px !important;
   }
 }
-
-  /* Keep click me prompt visible until clicked */
-  #monster-prompt-mobile {
-    display: block !important;
-    opacity: 1 !important;
-  }
-
-  /* Only hide after runner is clicked */
-  #about-me-runner-mobile.clicked + #monster-prompt-mobile {
-    display: none !important;
-  }
-
 
   /* Desktop runner hidden on mobile */
   #about-me-runner {
@@ -834,6 +791,16 @@ html, body {
   }
 
 
+  /* Content adjustments */
+  .coding-languages {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .info-item, .language-item {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
 
   /* Game elements */
   #coin, #bomb { 
@@ -860,25 +827,6 @@ html, body {
 
 /* Ultra-Small Devices (<= 380px) */
 @media (max-width: 380px) {
-  #about-me-container {
-    top: 60% !important;
-    max-height: 70vh !important;
-    padding: 10px;
-  }
-
-  #about-me-container h1,
-  #about-me-container h2 {
-    font-size: 0.9rem !important;
-  }
-
-  .info-item, .language-item {
-    font-size: 0.7rem !important;
-  }
-
-  .coding-languages {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
   #runner, #main-menu-blur-runner {
     width: 100px;
     bottom: 100px;
@@ -893,10 +841,17 @@ html, body {
     height: 50px;
   }
 
+  #about-me-container {
+    padding: 10px;
+  }
+
   #about-me-runner-mobile {
     width: 100px;
   }
 
+  .info-item, .language-item {
+    font-size: 12px;
+  }
 }
 
 /* Tablet Styles (769px-1000px) */
@@ -1063,86 +1018,5 @@ html, body {
   .prominent-name {
     font-size: 16px !important;
     padding: 6px 12px !important;
-  }
-}
-
-
-/* Add this to your existing mobile media query */
-@media (max-width: 768px) {
-  /* Match the main menu container positioning */
-  #main-menu {
-    position: fixed;
-    top: 45% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 90% !important;
-    max-width: 800px !important;
-    max-height: 75vh !important;
-    padding: 20px 15px !important;
-    background-color: rgba(255, 255, 255, 0.6) !important;
-    border-radius: 16px !important;
-    border: 3px solid #5a2a83 !important;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
-    overflow-y: auto;
-    justify-content: flex-start;
-    padding-top: 20px !important;
-  }
-
-  /* Adjust the instructions box */
-  #instructions {
-    padding: 10px !important;
-    margin: 0 auto 15px auto !important;
-    width: 100% !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    border: none !important;
-  }
-
-  /* Style the title */
-  #instructions h1 {
-    font-size: 1rem !important;
-    margin-bottom: 15px !important;
-    color: #5a2a83;
-    text-shadow: 2px 2px #fff;
-    text-align: center;
-  }
-
-  /* Style the list items */
-  #instructions ul li {
-    font-size: 0.8rem !important;
-    margin-bottom: 8px !important;
-    text-align: left;
-    justify-content: flex-start;
-    white-space: normal;
-  }
-
-  /* Adjust the start button */
-  #start-btn {
-    margin-top: 10px !important;
-  }
-  #start-btn img {
-    width: 180px !important;
-  }
-
-  /* Hide the blur runner on mobile */
-  #main-menu-blur-runner {
-    display: none !important;
-  }
-}
-
-/* For very small phones */
-@media (max-width: 380px) {
-  #main-menu {
-    top: 40% !important;
-    max-height: 80vh !important;
-  }
-  #instructions h1 {
-    font-size: 0.9rem !important;
-  }
-  #instructions ul li {
-    font-size: 0.7rem !important;
-  }
-  #start-btn img {
-    width: 150px !important;
   }
 }
