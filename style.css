@@ -748,9 +748,9 @@ html, body {
 /* Update these mobile styles in your existing @media (max-width: 768px) section */
 @media (max-width: 768px) {
 #about-me-container {
-    top: 45% !important; /* Move up further */
-    max-height: 75vh !important; /* Increase height more */
-    padding: 15px !important; /* Reduce padding */
+    top: 55% !important; /* Move up further */
+    max-height: 65vh !important; /* Increase height more */
+    padding: 12px 15px !important; /* Reduce padding */
     overflow-y: auto; /* Ensure scrolling if needed */
   }
 
@@ -768,18 +768,21 @@ html, body {
 
   /* Tighten coding languages grid */
   .coding-languages {
-    gap: 5px !important; /* Reduce gap between items */
-    margin-top: 10px !important;
+    gap: 2px 10px !important; /* Reduce gap between items */
+    margin-top: 8px !important;
+    grid-template-columns: 1fr;
   }
 
   .language-item {
-    padding: 2px !important;
+    margin:0  !important;
+    padding: 1px 0 !important;
+    line-height: 1.2 !important;
   }
 
   /* Adjust mobile runner position */
   #mobile-runner-container {
-    margin-top: 10px !important; /* Reduce space above runner */
-    margin-bottom: -10px !important; /* Reduce space below */
+    margin-top: 15px !important; /* Reduce space above runner */
+    margin-bottom: -15px !important; /* Reduce space below */
   }
 
   #about-me-runner-mobile {
@@ -816,13 +819,6 @@ html, body {
   }
 
 
-  /* Content adjustments */
-  .coding-languages {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-
 
   /* Game elements */
   #coin, #bomb { 
@@ -850,8 +846,8 @@ html, body {
 /* Ultra-Small Devices (<= 380px) */
 @media (max-width: 380px) {
   #about-me-container {
-    top: 40% !important;
-    max-height: 80vh !important;
+    top: 60% !important;
+    max-height: 70vh !important;
     padding: 10px;
   }
 
@@ -1054,6 +1050,7 @@ html, body {
     padding: 6px 12px !important;
   }
 }
+
 
 /* Add this to your existing mobile media query */
 @media (max-width: 768px) {
