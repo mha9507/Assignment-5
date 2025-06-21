@@ -714,6 +714,10 @@ html, body {
     left: 30px;
   }
 
+
+
+
+  
   /* Menu Bar */
   #pixel-menu {
     top: 10px;
@@ -743,26 +747,51 @@ html, body {
   }
 /* Update these mobile styles in your existing @media (max-width: 768px) section */
 @media (max-width: 768px) {
-  /* Adjust about me container */
-  #about-me-container {
-    top: 50% !important; /* Move up slightly */
-    max-height: 70vh !important; /* Increase height */
-    padding: 20px 15px !important;
-    transform: translate(-50%, -50%) !important;
+#about-me-container {
+    top: 45% !important; /* Move up further */
+    max-height: 75vh !important; /* Increase height more */
+    padding: 15px !important; /* Reduce padding */
+    overflow-y: auto; /* Ensure scrolling if needed */
   }
 
-  /* Make headings smaller */
+  /* Make all text smaller */
   #about-me-container h1,
   #about-me-container h2 {
-    font-size: 1.2rem !important;
-    margin-bottom: 15px !important;
-  }
-
-  /* Adjust info items */
-  .info-item {
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
     margin-bottom: 10px !important;
   }
+
+  .info-item, .language-item {
+    font-size: 0.8rem !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* Tighten coding languages grid */
+  .coding-languages {
+    gap: 5px !important; /* Reduce gap between items */
+    margin-top: 10px !important;
+  }
+
+  .language-item {
+    padding: 2px !important;
+  }
+
+  /* Adjust mobile runner position */
+  #mobile-runner-container {
+    margin-top: 10px !important; /* Reduce space above runner */
+    margin-bottom: -10px !important; /* Reduce space below */
+  }
+
+  #about-me-runner-mobile {
+    width: 80px !important; /* Slightly smaller */
+    margin-bottom: 0 !important;
+  }
+
+  /* Reduce info section margins */
+  .info-section {
+    margin-bottom: 15px !important;
+  }
+}
 
   /* Keep click me prompt visible until clicked */
   #monster-prompt-mobile {
@@ -774,7 +803,7 @@ html, body {
   #about-me-runner-mobile.clicked + #monster-prompt-mobile {
     display: none !important;
   }
-}
+
 
   /* Desktop runner hidden on mobile */
   #about-me-runner {
@@ -793,10 +822,7 @@ html, body {
     gap: 10px;
   }
 
-  .info-item, .language-item {
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
+
 
   /* Game elements */
   #coin, #bomb { 
@@ -823,6 +849,25 @@ html, body {
 
 /* Ultra-Small Devices (<= 380px) */
 @media (max-width: 380px) {
+  #about-me-container {
+    top: 40% !important;
+    max-height: 80vh !important;
+    padding: 10px;
+  }
+
+  #about-me-container h1,
+  #about-me-container h2 {
+    font-size: 0.9rem !important;
+  }
+
+  .info-item, .language-item {
+    font-size: 0.7rem !important;
+  }
+
+  .coding-languages {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
   #runner, #main-menu-blur-runner {
     width: 100px;
     bottom: 100px;
@@ -837,17 +882,10 @@ html, body {
     height: 50px;
   }
 
-  #about-me-container {
-    padding: 10px;
-  }
-
   #about-me-runner-mobile {
     width: 100px;
   }
 
-  .info-item, .language-item {
-    font-size: 12px;
-  }
 }
 
 /* Tablet Styles (769px-1000px) */
