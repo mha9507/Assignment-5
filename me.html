@@ -21,14 +21,13 @@
   </nav>
 
 <!-- About Me Content -->
+<!-- About Me Content -->
 <div id="about-me-container">
   <h1 class="typewriter">About Me</h1>
+  
+  <!-- Desktop version of runner (hidden on mobile) -->
   <img id="about-me-runner" src="media/run2.gif" alt="Running character">
-
-  <div id="transformer-container">
-    <div id="transform-effect" class="hidden"></div>
-  </div>
-      
+  
   <div class="info-section">
     <div class="info-item typewriter" style="animation-delay: 0.5s">
       <span class="info-label">Birthday:</span>
@@ -76,14 +75,17 @@
       <span>CSS</span>
     </div>
   </div>
+
+  <!-- Mobile version of runner and prompt (hidden on desktop) -->
+  <div id="mobile-runner-container">
+    <img id="about-me-runner-mobile" src="media/run2.gif" alt="Running character">
+    <div id="monster-prompt-mobile">
+      Click me!
+    </div>
+  </div>
 </div>
 
 
-<!-- Monster Click Prompt -->
-<!-- Tiny Monster Click Prompt -->
-<div id="monster-prompt">
-  Click me!
-</div>
 
   <div id="main-menu">
     <div id="main-menu-blur-runner">
