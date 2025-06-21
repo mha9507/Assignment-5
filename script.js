@@ -417,100 +417,132 @@ function gameLoop(timestamp) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  const runner = document.getElementById('about-me-runner');
   const forms = ['media/run2.gif', 'media/coin.gif', 'media/fly.gif', 'media/bomb.gif', 'media/tornado.gif'];
   let currentForm = 0;
   let isHovering = false;
-  const monsterPrompt = document.getElementById('monster-prompt');
+
+  // Get both runner elements
+  const runners = [document.getElementById('about-me-runner'), document.getElementById('about-me-runner-mobile')];
+  const prompts = [document.getElementById('monster-prompt'), document.getElementById('monster-prompt-mobile')];
 
   // Initially hide both elements
-  runner.style.opacity = '0';
-  monsterPrompt.style.opacity = '0';
-  monsterPrompt.style.display = 'block'; // Keep it in DOM but hidden
+  runners.forEach(runner => {
+    if (runner) {
+      runner.style.opacity = '0';
+      runner.style.transition = 'opacity 0.5s ease';
+    }
+  });
+
+  prompts.forEach(prompt => {
+    if (prompt) {
+      prompt.style.opacity = '0';
+      prompt.style.display = 'block';
+    }
+  });
 
   // Show both elements after 1.5 seconds with fade-in effect
   setTimeout(() => {
-    runner.style.opacity = '1';
-    monsterPrompt.style.opacity = '1';
+    runners.forEach(runner => {
+      if (runner) runner.style.opacity = '1';
+    });
+    prompts.forEach(prompt => {
+      if (prompt) prompt.style.opacity = '1';
+    });
     
-    // Hide prompt after 5 seconds or when clicked
+    // Hide prompts after 5 seconds
     setTimeout(() => {
-      monsterPrompt.style.opacity = '0';
-      setTimeout(() => {
-        monsterPrompt.style.display = 'none';
-      }, 500); // Wait for fade-out to complete
+      prompts.forEach(prompt => {
+        if (prompt) {
+          prompt.style.opacity = '0';
+          setTimeout(() => {
+            prompt.style.display = 'none';
+          }, 500);
+        }
+      });
     }, 5000);
-  }, 2800); // 1.5 second delay
+  }, 2800);
 
-  // Hide prompt when runner is clicked
-  runner.addEventListener('click', () => {
-    monsterPrompt.style.opacity = '0';
-    setTimeout(() => {
-      monsterPrompt.style.display = 'none';
-    }, 500); // Wait for fade-out to complete
-    // Rest of your click handler...
-  });
+  // Set up click handlers for both runners
+  runners.forEach(runner => {
+    if (runner) {
+      // Set consistent size for all forms
+      runner.style.width = runner.id === 'about-me-runner-mobile' ? '120px' : '350px';
+      runner.style.height = 'auto';
 
-  // Set consistent size for all forms
-  runner.style.width = '350px';
-  runner.style.height = 'auto';
-  runner.style.transition = 'opacity 0.5s ease'; // Add transition for smooth appearance
+      // Animation control
+      setInterval(() => {
+        if (runner.src.includes('media/run2.gif')) {
+          runner.src = runner.src;
+        }
+      }, 1000);
 
-  // 1. Animation Control
-  function restartAnimation() {
-    if (runner.src.includes('media/run2.gif')) {
-      runner.src = runner.src;
+      // Hover effects (desktop only)
+      if (runner.id === 'about-me-runner') {
+        runner.addEventListener('mouseenter', () => {
+          isHovering = true;
+          runner.style.filter = 'drop-shadow(0 0 10px gold)';
+        });
+
+        runner.addEventListener('mouseleave', () => {
+          isHovering = false;
+          updateAppearance(runner);
+        });
+      }
+
+      // Click handler
+      runner.addEventListener('click', () => {
+        const prompt = runner.id === 'about-me-runner' 
+          ? document.getElementById('monster-prompt') 
+          : document.getElementById('monster-prompt-mobile');
+        
+        if (prompt) {
+          prompt.style.opacity = '0';
+          setTimeout(() => {
+            prompt.style.display = 'none';
+          }, 500);
+        }
+        
+        currentForm = (currentForm + 1) % forms.length;
+        triggerTransformation(runner);
+        
+        if (window.innerWidth <= 480) {
+          const messages = [
+            "Now I'm a coin!",
+            "Now I'm a fly!",
+            "Now I'm a bomb!",
+            "Now I'm a tornado!",
+            "Back to running!"
+          ];
+          showPopupMessage(true, messages[currentForm]);
+        }
+      });
     }
-  }
-  setInterval(restartAnimation, 1000);
-
-  // 2. Hover Effects
-  runner.addEventListener('mouseenter', () => {
-    isHovering = true;
-    runner.style.filter = 'drop-shadow(0 0 10px gold)';
-    emitParticles();
-  });
-
-  runner.addEventListener('mouseleave', () => {
-    isHovering = false;
-    updateAppearance();
-  });
-
-  // 3. Click Transformations
-  runner.addEventListener('click', () => {
-    currentForm = (currentForm + 1) % forms.length;
-    triggerTransformation();
   });
 
   // Helper Functions
-  function triggerTransformation() {
-    runner.style.transform = 'scale(0.8)';
+  function triggerTransformation(runnerElement) {
+    runnerElement.style.transform = 'scale(0.8)';
     setTimeout(() => {
-      runner.src = forms[currentForm];
-      runner.style.width = '350px';
-      runner.style.height = 'auto';
-      updateAppearance();
-      runner.style.transform = 'scale(1)';
+      runnerElement.src = forms[currentForm];
+      runnerElement.style.width = runnerElement.id === 'about-me-runner-mobile' ? '120px' : '350px';
+      runnerElement.style.height = 'auto';
+      updateAppearance(runnerElement);
+      runnerElement.style.transform = 'scale(1)';
     }, 200);
   }
 
-  function updateAppearance() {
+  function updateAppearance(runnerElement) {
     if (isHovering) {
-      runner.style.filter = 'drop-shadow(0 0 10px gold)';
+      runnerElement.style.filter = 'drop-shadow(0 0 10px gold)';
     } else {
-      runner.style.filter = forms[currentForm].includes('coin') 
+      runnerElement.style.filter = forms[currentForm].includes('coin') 
         ? 'brightness(1.3)' 
         : 'none';
     }
     
-    runner.style.transform = forms[currentForm].includes('bomb') 
+    runnerElement.style.transform = forms[currentForm].includes('bomb') 
       ? 'rotate(45deg)' 
       : 'none';
-  }
-
-  function emitParticles() {
-    if (!isHovering) return;
-    // Your particle effect implementation here
   }
 
   // Typing animation effect
@@ -561,4 +593,3 @@ restartBtn.addEventListener('click', () => {
   nameDisplay.style.display = 'block'; // Show name display on restart
   restartGame();
 });
-
