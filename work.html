@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
 
-
 * {
   margin: 0;
   padding: 0;
@@ -355,10 +354,15 @@ body {
   
   .project-card {
     padding: 15px;
+    margin-top: -40px;
+    min-height: 80vh;
+    justify-content: flex-start;
+    padding-top: 40px;
   }
   
   .project-card h2 {
     font-size: 1rem;
+    margin-top: 10px;
   }
   
   .project-card p {
@@ -366,7 +370,9 @@ body {
   }
 
   .project-card img {
-    max-width: 85%;
+    max-width: 95%;
+    margin-top: -20px;
+    transform: scale(1.1);
   }
 
   .project-card .image-container::after {
@@ -379,12 +385,16 @@ body {
   .project-card .image-container:hover::after {
     bottom: -18px;
   }
+
+  .runner {
+    bottom: 60px;
+  }
 }
 
 @media (max-width: 450px) {
   .runner {
     width: 120px;
-    bottom: 70px;
+    bottom: 50px;
     left: 30px;
   }
   
@@ -399,6 +409,9 @@ body {
   
   .project-card {
     padding: 12px;
+    margin-top: -50px;
+    min-height: 85vh;
+    padding-top: 30px;
   }
   
   .project-card h2 {
@@ -412,6 +425,12 @@ body {
   .nav-arrow {
     width: 40px;
     height: 40px;
+  }
+
+  .project-card img {
+    max-width: 100%;
+    margin-top: -30px;
+    transform: scale(1.15);
   }
 
   .project-card .image-container::after {
