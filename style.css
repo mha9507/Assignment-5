@@ -894,8 +894,6 @@ html, body {
 
 
 
-
-
 /* ===== COMPLETE MOBILE CSS (PHONES) ===== */
 @media (max-width: 768px) {
   /* 1. LARGER MENU BUTTONS */
@@ -917,7 +915,7 @@ html, body {
   }
 
   /* 2. MAIN MENU ADJUSTMENTS */
-  #main-menu {
+  #main-menu, #contact-menu {
     padding-top: 90px;
     gap: 20px;
   }
@@ -944,8 +942,8 @@ html, body {
     font-size: 13px;
   }
 
-  /* Game elements */
-  #runner, #main-menu-blur-runner {
+  /* Game elements - make contact runner match index runner */
+  #runner, #main-menu-blur-runner, #contact-blur-runner {
     width: 170px;
     bottom: 22vh;
     left: 20px;
@@ -999,6 +997,30 @@ html, body {
     height: 30px !important;
   }
 
+  /* Contact page specific adjustments */
+  #contact-content {
+    padding: 20px 15px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  #contact-content h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .social-section h3 {
+    font-size: 0.9rem;
+  }
+
+  .social-icons {
+    gap: 20px;
+  }
+
+  .social-icons a {
+    font-size: 1.8rem;
+  }
+
   /* Mobile runner adjustments */
   #mobile-runner-container {
     margin: 15px 0;
@@ -1040,6 +1062,28 @@ html, body {
     padding: 15px 12px !important;
   }
 
+  /* Contact page adjustments */
+  #contact-content {
+    padding: 15px 12px;
+    font-size: 13px;
+  }
+
+  #contact-content h2 {
+    font-size: 1rem;
+  }
+
+  .social-section h3 {
+    font-size: 0.8rem;
+  }
+
+  .social-icons {
+    gap: 15px;
+  }
+
+  .social-icons a {
+    font-size: 1.5rem;
+  }
+
   .info-item {
     font-size: 0.75rem !important;
   }
@@ -1049,7 +1093,7 @@ html, body {
   }
 
   /* Smaller game elements */
-  #runner, #main-menu-blur-runner {
+  #runner, #main-menu-blur-runner, #contact-blur-runner {
     width: 150px;
     bottom: 18vh;
   }
