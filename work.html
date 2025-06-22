@@ -21,7 +21,6 @@ body {
   font-size: 16px;
 }
 
-/* Background with blur effect */
 #background {
   position: fixed;
   top: 0;
@@ -37,7 +36,6 @@ body {
   filter: blur(6px);
 }
 
-/* Foreground animation */
 #foreground {
   position: absolute;
   top: 0;
@@ -54,7 +52,6 @@ body {
   100% { background-position-x: -1000px; }
 }
 
-/* Navigation */
 #pixel-menu {
   position: fixed;
   top: 20px;
@@ -82,11 +79,10 @@ body {
   transform: scale(1.1);
 }
 
-/* Main scrolling container */
 .scrolling-container {
   width: 100vw;
   height: 100vh;
-  padding-top: 70px; /* Increased to move content down */
+  padding-top: 70px;
   overflow-x: auto;
   overflow-y: hidden;
   position: relative;
@@ -94,7 +90,6 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Projects container */
 .projects-wrapper {
   position: relative;
   width: 500vw;
@@ -103,7 +98,6 @@ body {
   z-index: 10;
 }
 
-/* Individual project sections */
 .project-section {
   width: 100vw;
   height: 100%;
@@ -113,10 +107,9 @@ body {
   align-items: center;
   position: relative;
   scroll-snap-align: start;
-  padding: 30px 20px; /* Increased padding */
+  padding: 30px 20px;
 }
 
-/* Project cards */
 .project-card {
   background-color: rgba(255, 255, 255, 0.6);
   border: 3px solid #5a2a83;
@@ -126,16 +119,15 @@ body {
   max-width: 850px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(2px);
-  font-size: 17px; /* Slightly larger */
+  font-size: 17px;
   line-height: 1.6;
   position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  margin-top: 20px; /* Added space below menu */
+  margin-top: 20px;
 }
 
-/* Project image container */
 .project-card .image-container {
   text-align: center;
   margin-bottom: 30px;
@@ -146,9 +138,8 @@ body {
   justify-content: center;
 }
 
-/* Project image styling */
 .project-card img {
-  max-width: 80%; /* Larger images */
+  max-width: 80%;
   border-radius: 8px;
   border: 2px solid #5a2a83;
   transition: all 0.3s ease;
@@ -169,7 +160,6 @@ body {
   animation: pulse-glow 1s infinite;
 }
 
-/* Click hint styling */
 .project-card .image-container::after {
   content: "CLICK TO VIEW →";
   position: absolute;
@@ -212,10 +202,10 @@ body {
 
 .project-card h2 {
   color: #5a2a83;
-  margin-bottom: 30px; /* More spacing */
+  margin-bottom: 30px;
   text-shadow: 2px 2px #fff;
   text-align: center;
-  font-size: 1.7rem; /* Larger */
+  font-size: 1.7rem;
   overflow: hidden;
   border-right: 2px solid #5a2a83;
   white-space: nowrap;
@@ -231,7 +221,7 @@ body {
   margin-bottom: 15px;
 }
 
-/* Runner character */
+/* Runner character - DESKTOP */
 .runner {
   position: fixed;
   bottom: 180px;
@@ -241,9 +231,14 @@ body {
   image-rendering: pixelated;
   transition: left 0.5s ease-out;
   pointer-events: none;
+  animation: runner-bounce 1s infinite ease-in-out;
 }
 
-/* Navigation arrows */
+@keyframes runner-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 .nav-arrow {
   position: fixed;
   top: 50%;
@@ -294,8 +289,8 @@ body {
 /* Responsive adjustments */
 @media (max-width: 1000px) {
   .runner {
-    width: 150px;
-    bottom: 100px;
+    width: 280px; /* Larger than before */
+    bottom: 120px;
     left: 40px;
   }
   
@@ -320,23 +315,14 @@ body {
     width: 60px;
     height: 60px;
   }
-
-  .project-card .image-container::after {
-    font-size: 12px;
-    padding: 6px 15px;
-    bottom: -25px;
-  }
-  
-  .project-card .image-container:hover::after {
-    bottom: -20px;
-  }
 }
 
 @media (max-width: 768px) {
-  .scrolling-container {
-    padding-top: 65px;
+  .runner {
+    width: 250px; /* Even larger */
+    bottom: 100px;
   }
-
+  
   .project-card h2 {
     white-space: normal;
     border-right: none;
@@ -345,129 +331,83 @@ body {
     margin-bottom: 22px;
   }
   
-  .project-card .image-container::after {
-    font-size: 11px;
-    padding: 5px 12px;
-  }
-
   .project-card img {
     max-width: 85%;
   }
 }
 
+/* PHONE STYLES - Equal boxes and huge runner */
 @media (max-width: 600px) {
-  #pixel-menu {
-    gap: 15px;
+  .runner {
+    width: 300px !important; /* Massive size */
+    bottom: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .scrolling-container {
+    padding-top: 60px;
+  }
+  
+  .project-card {
+    min-height: 75vh !important;
+    margin-top: 10px;
+    padding: 20px;
+    width: 96%;
+  }
+  
+  .project-card .image-container {
+    min-height: 40vh;
+    margin-bottom: 20px;
+  }
+  
+  .project-card img {
+    max-height: 35vh;
+    width: auto;
+    max-width: 90%;
+    transform: none !important;
+  }
+  
+  .project-card h2 {
+    font-size: 1.3rem;
+    margin: 10px 0 15px 0;
+  }
+  
+  .project-card p {
+    font-size: 15px;
+    min-height: 15vh;
+    margin-bottom: 20px;
   }
   
   #pixel-menu img {
     height: 100px;
   }
-  
-  .scrolling-container {
-    padding-top: 50px;
-  }
-  
-  .project-card {
-    padding: 10px;
-    min-height: 69vh;
-    margin-top: 15px;
-    width: 96%;
-  }
-  
-  .project-card h2 {
-    font-size: 1.3rem;
-    margin: 15px 0 25px 0;
-  }
-  
-  .project-card p {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .project-card img {
-    max-width: 95%;
-    transform: scale(1.15);
-  }
-
-  .runner {
-    bottom: 25vh;
-    width: 250px;
-  }
-
-  .project-card .image-container::after {
-    content: "TAP TO VIEW →";
-    font-size: 11px;
-    padding: 6px 12px;
-    bottom: -18px;
-  }
-  
-  .project-card .image-container:hover::after {
-    bottom: -15px;
-  }
 }
 
 @media (max-width: 450px) {
   .runner {
-    width: 100px;
-    bottom: 22vh;
-    left: 20px;
+    width: 250px !important; /* Still huge */
+    bottom: 12vh;
+  }
+  
+  .project-card {
+    min-height: 72vh !important;
+    padding: 18px;
+  }
+  
+  .project-card .image-container {
+    min-height: 38vh;
   }
   
   #pixel-menu {
-    gap: 10px;
-    padding: 0 10px;
     height: 70px;
   }
   
   #pixel-menu img {
     height: 70px;
   }
-  
-  .scrolling-container {
-    padding-top: 55px;
-  }
-  
-  .project-card {
-    padding: 18px;
-    min-height: 60vh;
-    margin-top: 12px;
-    width: 97%;
-  }
-  
-  .project-card h2 {
-    font-size: 1.1rem;
-    margin: 12px 0 22px 0;
-  }
-  
-  .project-card p {
-    font-size: 14px;
-    line-height: 1.65;
-  }
-  
-  .nav-arrow {
-    width: 35px;
-    height: 35px;
-  }
-
-  .project-card img {
-    max-width: 98%;
-    transform: scale(1.25);
-  }
-
-  .project-card .image-container::after {
-    content: "TAP →";
-    font-size: 9px;
-    padding: 5px 10px;
-    bottom: -15px;
-  }
-  
-  .project-card .image-container:hover::after {
-    bottom: -12px;
-  }
 }
 
-/* Hide scrollbar */
 .scrolling-container::-webkit-scrollbar {
   display: none;
 }
@@ -476,7 +416,6 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
   </style>
 </head>
 <body>
