@@ -221,7 +221,6 @@ body {
   margin-bottom: 15px;
 }
 
-/* Runner character - DESKTOP */
 .runner {
   position: fixed;
   bottom: 180px;
@@ -231,12 +230,6 @@ body {
   image-rendering: pixelated;
   transition: left 0.5s ease-out;
   pointer-events: none;
-  animation: runner-bounce 1s infinite ease-in-out;
-}
-
-@keyframes runner-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
 }
 
 .nav-arrow {
@@ -289,8 +282,8 @@ body {
 /* Responsive adjustments */
 @media (max-width: 1000px) {
   .runner {
-    width: 280px; /* Larger than before */
-    bottom: 120px;
+    width: 150px;
+    bottom: 100px;
     left: 40px;
   }
   
@@ -315,14 +308,23 @@ body {
     width: 60px;
     height: 60px;
   }
+
+  .project-card .image-container::after {
+    font-size: 12px;
+    padding: 6px 15px;
+    bottom: -25px;
+  }
+  
+  .project-card .image-container:hover::after {
+    bottom: -20px;
+  }
 }
 
 @media (max-width: 768px) {
-  .runner {
-    width: 250px; /* Even larger */
-    bottom: 100px;
+  .scrolling-container {
+    padding-top: 65px;
   }
-  
+
   .project-card h2 {
     white-space: normal;
     border-right: none;
@@ -331,80 +333,140 @@ body {
     margin-bottom: 22px;
   }
   
+  .project-card .image-container::after {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
   .project-card img {
     max-width: 85%;
   }
 }
 
-/* PHONE STYLES - Equal boxes and huge runner */
 @media (max-width: 600px) {
-  .runner {
-    width: 300px !important; /* Massive size */
-    bottom: 15vh;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .scrolling-container {
-    padding-top: 60px;
-  }
-  
-  .project-card {
-    min-height: 75vh !important;
-    margin-top: 10px;
-    padding: 20px;
-    width: 96%;
-  }
-  
-  .project-card .image-container {
-    min-height: 40vh;
-    margin-bottom: 20px;
-  }
-  
-  .project-card img {
-    max-height: 35vh;
-    width: auto;
-    max-width: 90%;
-    transform: none !important;
-  }
-  
-  .project-card h2 {
-    font-size: 1.3rem;
-    margin: 10px 0 15px 0;
-  }
-  
-  .project-card p {
-    font-size: 15px;
-    min-height: 15vh;
-    margin-bottom: 20px;
+  #pixel-menu {
+    gap: 15px;
   }
   
   #pixel-menu img {
     height: 100px;
   }
+  
+  .scrolling-container {
+    padding-top: 60px;
+  }
+  
+  /* Standardized to match "With Every Stroke, A Story" */
+  .project-card {
+    padding: 18px;
+    min-height: 68vh !important; /* Exact match */
+    margin-top: 15px;
+    width: 94%;
+    justify-content: space-between;
+  }
+  
+  .project-card h2 {
+    font-size: 1.15rem; /* Reduced */
+    margin: 8px 0 12px 0; /* Tighter spacing */
+    line-height: 1.4;
+  }
+  
+  .project-card p {
+    font-size: 13px; /* Reduced */
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .project-card .image-container {
+    min-height: 36vh; /* Matches reference */
+    margin-bottom: 15px;
+  }
+
+  .project-card img {
+    max-width: 92%;
+    max-height: 32vh; /* Reference proportions */
+    width: auto;
+    transform: none !important;
+  }
+
+  .runner {
+    width: 200px;
+    bottom: 25vh;
+  }
+
+  .project-card .image-container::after {
+    content: "TAP TO VIEW →";
+    font-size: 11px;
+    padding: 6px 12px;
+    bottom: -18px;
+  }
+  
+  .project-card .image-container:hover::after {
+    bottom: -15px;
+  }
 }
 
 @media (max-width: 450px) {
   .runner {
-    width: 250px !important; /* Still huge */
-    bottom: 12vh;
-  }
-  
-  .project-card {
-    min-height: 72vh !important;
-    padding: 18px;
-  }
-  
-  .project-card .image-container {
-    min-height: 38vh;
+    width: 180px;
+    bottom: 22vh;
+    left: 20px;
   }
   
   #pixel-menu {
+    gap: 10px;
+    padding: 0 10px;
     height: 70px;
   }
   
   #pixel-menu img {
     height: 70px;
+  }
+  
+  .scrolling-container {
+    padding-top: 55px;
+  }
+  
+  .project-card {
+    padding: 15px;
+    min-height: 65vh !important; /* Slightly smaller */
+    margin-top: 12px;
+    width: 94%;
+  }
+  
+  .project-card h2 {
+    font-size: 1.05rem; /* Smaller */
+    margin: 6px 0 10px 0;
+  }
+  
+  .project-card p {
+    font-size: 12px; /* Smaller */
+    line-height: 1.5;
+  }
+  
+  .nav-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .project-card img {
+    max-width: 92%;
+    max-height: 30vh;
+  }
+
+  .project-card .image-container {
+    min-height: 34vh;
+  }
+
+  .project-card .image-container::after {
+    content: "TAP →";
+    font-size: 9px;
+    padding: 5px 10px;
+    bottom: -15px;
+  }
+  
+  .project-card .image-container:hover::after {
+    bottom: -12px;
   }
 }
 
