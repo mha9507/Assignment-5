@@ -7,9 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
 
-/* ==================== */
-/* GLOBAL STYLES */
-/* ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -25,9 +22,6 @@ body {
   font-size: 16px;
 }
 
-/* ==================== */
-/* BACKGROUND ELEMENTS */
-/* ==================== */
 #background {
   position: fixed;
   top: 0;
@@ -59,9 +53,6 @@ body {
   100% { background-position-x: -1000px; }
 }
 
-/* ==================== */
-/* PIXEL MENU */
-/* ==================== */
 #pixel-menu {
   position: fixed;
   top: 20px;
@@ -89,9 +80,6 @@ body {
   transform: scale(1.1);
 }
 
-/* ==================== */
-/* PROJECT SCROLLER */
-/* ==================== */
 .scrolling-container {
   width: 100vw;
   height: 100vh;
@@ -123,9 +111,6 @@ body {
   padding: 30px 20px;
 }
 
-/* ==================== */
-/* PROJECT CARDS */
-/* ==================== */
 .project-card {
   background-color: rgba(255, 255, 255, 0.6);
   border: 3px solid #5a2a83;
@@ -204,6 +189,18 @@ body {
   animation: pulse-attention 1.5s infinite;
 }
 
+@keyframes pulse-attention {
+  0% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.05); }
+  100% { transform: translateX(-50%) scale(1); }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 5px rgba(90, 42, 131, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(90, 42, 131, 0.7); }
+  100% { box-shadow: 0 0 5px rgba(90, 42, 131, 0.3); }
+}
+
 .project-card h2 {
   color: #5a2a83;
   margin-bottom: 30px;
@@ -225,9 +222,6 @@ body {
   margin-bottom: 15px;
 }
 
-/* ==================== */
-/* RUNNER CHARACTER */
-/* ==================== */
 .runner {
   position: fixed;
   bottom: 180px;
@@ -239,9 +233,6 @@ body {
   pointer-events: none;
 }
 
-/* ==================== */
-/* NAVIGATION ARROWS */
-/* ==================== */
 .nav-arrow {
   position: fixed;
   top: 50%;
@@ -279,21 +270,6 @@ body {
   pointer-events: none;
 }
 
-/* ==================== */
-/* ANIMATIONS */
-/* ==================== */
-@keyframes pulse-attention {
-  0% { transform: translateX(-50%) scale(1); }
-  50% { transform: translateX(-50%) scale(1.05); }
-  100% { transform: translateX(-50%) scale(1); }
-}
-
-@keyframes pulse-glow {
-  0% { box-shadow: 0 0 5px rgba(90, 42, 131, 0.3); }
-  50% { box-shadow: 0 0 15px rgba(90, 42, 131, 0.7); }
-  100% { box-shadow: 0 0 5px rgba(90, 42, 131, 0.3); }
-}
-
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
@@ -304,11 +280,7 @@ body {
   50% { border-color: #5a2a83; }
 }
 
-/* ==================== */
-/* RESPONSIVE DESIGN */
-/* ==================== */
-
-/* ----- TABLETS (768px - 1000px) ----- */
+/* Responsive adjustments */
 @media (max-width: 1000px) {
   .runner {
     width: 150px;
@@ -349,202 +321,179 @@ body {
   }
 }
 
-/* ----- PHONES (600px - 768px) ----- */
 @media (max-width: 768px) {
-  /* Menu system - matching other pages */
-  #pixel-menu {
-    height: 90px;
-    padding: 0 10px;
-    gap: 5px;
-  }
-  
-  #pixel-menu img {
-    height: 85px !important;
-    margin: 0 -8px;
-  }
-
-  /* Scrolling container */
   .scrolling-container {
-    padding-top: 90px;
-    height: calc(100vh - 90px);
-  }
-
-  .projects-wrapper {
-    height: calc(100vh - 90px);
-  }
-
-  /* Runner positioning */
-  .runner {
-    width: 170px;
-    bottom: 22vh;
-    left: 20px;
-  }
-
-  /* Project card styling */
-  .project-card {
-    padding: 18px;
-    min-height: 65vh !important;
-    width: 94%;
+    padding-top: 50px;
   }
 
   .project-card h2 {
     white-space: normal;
     border-right: none;
     animation: none;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+    margin-bottom: 22px;
+  }
+  
+  .project-card .image-container::after {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .project-card img {
+    max-width: 88%;
+  }
+}
+
+@media (max-width: 600px) {
+  .scrolling-container {
+    padding-top: 30px !important;
+    height: calc(100vh - 30px);
+  }
+
+  .projects-wrapper {
+    height: calc(100vh - 30px);
+  }
+
+  /* Maintain runner position */
+  .runner {
+    width: 200px;
+    bottom: calc(25vh + 30px);
+    left: 40px;
+  }
+
+  /* Menu adjustments */
+  #pixel-menu {
+    gap: 15px;
+  }
+  
+  #pixel-menu img {
+    height: 100px;
+  }
+  
+  /* Project card styling */
+  .project-card {
+    padding: 18px;
+    min-height: 68vh !important;
+    margin-top: 10px;
+    width: 96%;
+    justify-content: space-between;
+  }
+  
+  .project-card h2 {
+    font-size: 1.15rem;
     margin: 8px 0 12px 0;
     line-height: 1.4;
   }
-
+  
   .project-card p {
     font-size: 13px;
     line-height: 1.5;
+    margin-bottom: 15px;
   }
 
-  /* Image container */
+  /* Image container with reduced space to tap label */
   .project-card .image-container {
-    min-height: 34vh;
-    margin-bottom: 10px;
+    min-height: 36vh;
+    margin-bottom: 10px; /* Reduced from 15px */
   }
 
+  .project-card img {
+    max-width: 92%;
+    max-height: 32vh;
+    width: auto;
+    transform: none !important;
+  }
+
+  /* Tap label positioned closer to image */
+  .project-card .image-container::after {
+    content: "TAP TO VIEW →";
+    font-size: 11px;
+    padding: 5px 10px; /* Slightly smaller padding */
+    bottom: -12px; /* Moved up from -18px */
+  }
+  
+  .project-card .image-container:hover::after {
+    bottom: -10px; /* Moved up from -15px */
+  }
+}
+@media (max-width: 450px) {
+  /* Runner positioning - unchanged */
+  .runner {
+    width: 180px;
+    bottom: 22vh;
+    left: 20px;
+  }
+  
+  /* Pixel menu adjustments */
+  #pixel-menu {
+    gap: 10px;
+    padding: 0 10px;
+    height: 70px;
+  }
+  
+  #pixel-menu img {
+    height: 70px;
+  }
+  
+  /* Main container adjustments */
+  .scrolling-container {
+    padding-top: 40px; /* Reduced from 55px to move content up */
+    height: calc(100vh - 40px);
+  }
+
+  .projects-wrapper {
+    height: calc(100vh - 40px);
+  }
+  
+  /* Project card styling */
+  .project-card {
+    padding: 15px;
+    min-height: 65vh !important;
+    margin-top: 8px; /* Reduced from 12px */
+    width: 94%;
+  }
+  
+  .project-card h2 {
+    font-size: 1.05rem;
+    margin: 6px 0 10px 0;
+  }
+  
+  .project-card p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  /* Navigation arrows */
+  .nav-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Image adjustments */
   .project-card img {
     max-width: 92%;
     max-height: 30vh;
   }
 
-  .project-card .image-container::after {
-    content: "TAP TO VIEW →";
-    font-size: 11px;
-    padding: 5px 10px;
-    bottom: -12px;
-  }
-
-  .project-card .image-container:hover::after {
-    bottom: -10px;
-  }
-
-  /* Navigation arrows */
-  .nav-arrow {
-    width: 50px;
-    height: 50px;
-    opacity: 0.9;
-    background-color: rgba(255,255,255,0.5);
-    border-radius: 50%;
-  }
-}
-
-/* ----- SMALL PHONES (450px - 600px) ----- */
-@media (max-width: 600px) {
-  /* Menu adjustments */
-  #pixel-menu {
-    gap: 10px;
-  }
-  
-  #pixel-menu img {
-    height: 80px !important;
-  }
-
-  /* Project card adjustments */
-  .project-card {
-    min-height: 68vh !important;
-  }
-
-  .project-card h2 {
-    font-size: 1rem;
-  }
-
-  /* Image container */
   .project-card .image-container {
-    min-height: 36vh;
+    min-height: 34vh;
+    margin-bottom: 10px; /* Added for better spacing */
   }
 
-  .project-card img {
-    max-height: 32vh;
-  }
-}
-
-/* ----- VERY SMALL PHONES (< 450px) ----- */
-@media (max-width: 450px) {
-  /* Menu system */
-  #pixel-menu {
-    height: 80px;
-    padding: 0 8px;
-  }
-  
-  #pixel-menu img {
-    height: 70px !important;
-  }
-
-  /* Scrolling container */
-  .scrolling-container {
-    padding-top: 80px;
-    height: calc(100vh - 80px);
-  }
-
-  .projects-wrapper {
-    height: calc(100vh - 80px);
-  }
-
-  /* Runner positioning */
-  .runner {
-    width: 150px;
-    bottom: 18vh;
-  }
-
-  /* Project card */
-  .project-card {
-    padding: 15px;
-    min-height: 70vh !important;
-  }
-
-  .project-card h2 {
-    font-size: 0.95rem;
-  }
-
-  .project-card p {
-    font-size: 12px;
-  }
-
-  /* Image container */
+  /* Tap label positioning - moved closer */
   .project-card .image-container::after {
     content: "TAP →";
     font-size: 9px;
-    padding: 4px 8px;
-    bottom: -10px;
+    padding: 4px 8px; /* Reduced padding */
+    bottom: -10px; /* Moved up from -15px */
   }
   
   .project-card .image-container:hover::after {
-    bottom: -8px;
-  }
-
-  /* Navigation arrows */
-  .nav-arrow {
-    width: 40px;
-    height: 40px;
+    bottom: -8px; /* Moved up from -12px */
   }
 }
 
-/* ==================== */
-/* TOUCH DEVICE ADJUSTMENTS */
-/* ==================== */
-@media (max-width: 768px) and (hover: none) {
-  #pixel-menu img:hover {
-    transform: none !important;
-  }
-  
-  .project-card img:hover {
-    transform: none !important;
-    box-shadow: none;
-    filter: none;
-    border-color: #5a2a83 !important;
-    opacity: 1;
-    animation: pulse-glow 3s infinite;
-  }
-}
-
-/* ==================== */
-/* SCROLLBAR HIDING */
-/* ==================== */
+/* Scrollbar hiding - moved outside media query since it's global */
 .scrolling-container::-webkit-scrollbar {
   display: none;
 }
