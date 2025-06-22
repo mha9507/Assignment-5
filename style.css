@@ -895,10 +895,6 @@ html, body {
     left: 20px;
   }
 
-
-
-
-  
   /* Menu Bar */
   #pixel-menu {
     top: 10px;
@@ -926,7 +922,7 @@ html, body {
     padding: 10px;
     margin: 5px 0;
   }
-/* Update these mobile styles in your existing @media (max-width: 768px) section */
+
 /* Update these mobile styles in your existing @media (max-width: 768px) section */
 @media (max-width: 768px) {
   /* Adjust about me container */
@@ -979,8 +975,8 @@ html, body {
 
   /* Adjust mobile runner size */
   #about-me-runner-mobile {
-    width: 120px !important;
-    height: 120px !important;
+    width: 160px !important;
+    height: auto !important;
   }
 
   /* Make grid layout more compact */
@@ -1166,8 +1162,8 @@ html, body {
 
 @media (max-width: 450px) {
   #runner, #main-menu-blur-runner {
-    width: 120px;
-    bottom: 70px;
+    width: 140px;
+    bottom: 60px;
     left: 30px;
   }
   #coin, #bomb { width: 25px; height: 25px; }
@@ -1349,7 +1345,7 @@ html, body {
 
   #runner, #main-menu-blur-runner {
     width: 180px !important;
-    bottom: 19vh !important;
+    bottom: 17vh !important;
   }
 
   #coin, #bomb { 
