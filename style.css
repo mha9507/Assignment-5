@@ -1346,6 +1346,37 @@ html, body {
     height: 42px;
   }
 
-}
+
+  #runner, #main-menu-blur-runner {
+    width: 150px !important;
+    bottom: 20vh !important;
+  }
+
+  #coin, #bomb { 
+    width: 40px !important; 
+    height: 40px !important; 
+  }
+  
+  #fly { 
+    width: 60px !important; 
+    height: 60px !important; 
+  }
+
+  #tornado {
+    width: 65px !important;
+    height: 65px !important;
+  }
+
+  #about-me-runner-mobile {
+    width: 120px !important;
+  }
+
+  #about-me-runner-mobile[src*="media/coin.gif"],
+  #about-me-runner-mobile[src*="media/bomb.gif"],
+  #about-me-runner-mobile[src*="media/fly.gif"],
+  #about-me-runner-mobile[src*="media/tornado.gif"] {
+    width: 80px !important;
+    height: 80px !important;
+  }
 
 }
