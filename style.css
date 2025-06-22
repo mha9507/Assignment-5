@@ -847,183 +847,97 @@ html, body {
 
 
 
-
-
-
-/* ===== MOBILE-SPECIFIC STYLES ===== */
-/* Mobile runner container */
-#mobile-runner-container {
-  position: relative;
-  margin-top: 30px;
-  text-align: center;
-  display: none;
-}
-
-#about-me-runner-mobile {
-  width: 120px;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#monster-prompt-mobile {
-  display: none;
-  margin: 10px auto 0;
-  width: 100px;
-  font-size: 11px;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 6px 8px;
-  border-radius: 6px;
-  border: 2px solid #5a2a83;
-  animation: tinyBounce 1.5s infinite;
-}
-
-/* Mobile Runner Transformations */
-#about-me-runner-mobile[src*="media/coin.gif"],
-#about-me-runner-mobile[src*="media/bomb.gif"],
-#about-me-runner-mobile[src*="media/fly.gif"],
-#about-me-runner-mobile[src*="media/tornado.gif"] {
-  width: 80px !important;
-  height: 80px !important;
-  margin: 10px auto !important;
-}
-
-@keyframes mobilePulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-#about-me-runner-mobile:hover {
-  animation: mobilePulse 1.5s infinite;
-}
-
-
-
-/* ===== MOBILE-FIRST STYLES (PHONES) ===== */
+/* ===== COMPLETE MOBILE CSS (PHONES) ===== */
 @media (max-width: 768px) {
-  /* Global Reset for Mobile */
-  * {
-    touch-action: manipulation;
-  }
-
-  /* Layout Structure */
-  body, html {
-    overflow-x: hidden;
-    overscroll-behavior: none;
-  }
-
-  /* Main Menu Container */
-  #main-menu {
-    padding-top: 80px;
-    justify-content: flex-start;
-    gap: 25px;
-    min-height: 100vh;
-  }
-
-  /* Instructions Box - Enhanced Version */
-  #instructions {
-    width: 90%;
-    margin: 40px auto 25px auto;
-    padding: 28px 20px;
-    font-size: 15px;
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 18px;
-    border: 3px solid #5a2a83;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    max-width: 450px;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  /* Title Styling */
-  #instructions h1 {
-    font-size: 1.5rem;
-    margin: 0 0 28px 0;
-    padding: 0;
-    color: #5a2a83;
-    text-shadow: 2px 2px #fff;
-    line-height: 1.4;
-  }
-
-  /* List Items */
-  #instructions ul {
-    margin: 0 auto;
-    width: 95%;
-    padding-left: 0;
-  }
-
-  #instructions ul li {
-    margin-bottom: 14px;
-    line-height: 1.6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-
-  /* Icons */
-  .instruction-icon {
-    width: 38px;
-    height: 38px;
-    margin: 0 8px;
-  }
-  
-  .fly-icon {
-    width: 56px;
-    height: 56px;
-  }
-
-  /* Game Elements */
-  #runner, #main-menu-blur-runner {
-    width: 180px;
-    bottom: 22vh;
-    left: 20px;
-  }
-
-  #coin, #bomb { 
-    width: 42px;
-    height: 42px;
-  }
-  
-  #fly { 
-    width: 62px;
-    height: 62px;
-  }
-
-  #tornado {
-    width: 68px;
-    height: 68px;
-  }
-
-  /* Buttons */
-  #start-btn img, #restart-btn img {
-    width: 200px;
-  }
-
-  /* Menu Bar */
+  /* 1. ENLARGED MENU BAR */
   #pixel-menu {
-    top: 12px;
-    gap: 12px;
-    padding: 0 18px;
-    height: 75px;
+    height: 90px;
+    padding: 0 25px;
+    gap: 18px;
+    top: 15px;
   }
   
   #pixel-menu img {
+    height: 80px;
+    image-rendering: pixelated;
+  }
+
+  /* 2. UNIFIED CONTENT BOXES */
+  #instructions,
+  #about-me-container,
+  #contact-content {
+    width: 90%;
+    max-width: 440px;
+    min-height: 300px;
+    padding: 25px;
+    margin: 85px auto 30px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+    border: 3px solid #5a2a83;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    font-size: 15px;
+  }
+
+  /* Home Page - Instructions Box */
+  #instructions {
+    margin-top: 90px;
+  }
+  
+  #instructions h1 {
+    font-size: 1.4rem;
+    margin-bottom: 22px;
+    line-height: 1.4;
+  }
+
+  /* About Me Page */
+  #about-me-container {
+    margin-top: 85px;
+    max-height: 68vh;
+    overflow-y: auto;
+  }
+  
+  #about-me-container h1 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  /* Shared Content Styles */
+  #instructions ul li,
+  .info-item,
+  .contact-item {
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
+  /* 3. GAME ELEMENTS */
+  #runner, #main-menu-blur-runner {
+    width: 180px;
+    bottom: 22vh;
+    left: 25px;
+  }
+
+  #coin, #bomb { 
+    width: 45px;
+    height: 45px;
+  }
+  
+  #fly { 
+    width: 65px;
     height: 65px;
   }
 
-  /* Hide desktop elements */
-  #name-display, .prominent-name,
+  /* 4. BUTTONS */
+  #start-btn img, #restart-btn img {
+    width: 220px;
+  }
+
+  /* 5. HIDE/SHOW ELEMENTS */
+  #name-display, 
+  .prominent-name,
   #about-me-runner {
     display: none !important;
   }
-
-  /* Show mobile elements */
+  
   #mobile-runner-container {
     display: block;
   }
@@ -1031,136 +945,69 @@ html, body {
 
 /* ===== SMALL PHONES (<= 380px) ===== */
 @media (max-width: 380px) {
-  /* Compact Instructions Box */
-  #instructions {
-    min-height: 330px;
-    padding: 22px 16px;
-    margin: 30px auto 20px auto;
-    font-size: 14px;
-  }
-
-  #instructions h1 {
-    font-size: 1.3rem;
-    margin-bottom: 22px;
-  }
-
-  #instructions ul li {
-    margin-bottom: 12px;
-    font-size: 14px;
-  }
-
-  .instruction-icon {
-    width: 34px;
-    height: 34px;
+  /* More Compact Layout */
+  #pixel-menu {
+    height: 80px;
+    padding: 0 20px;
+    gap: 15px;
   }
   
-  .fly-icon {
-    width: 50px;
-    height: 50px;
+  #pixel-menu img {
+    height: 70px;
   }
 
-  /* Smaller Game Elements */
+  /* Slightly Smaller Boxes */
+  #instructions,
+  #about-me-container,
+  #contact-content {
+    width: 92%;
+    min-height: 280px;
+    padding: 20px;
+    margin-top: 75px;
+    font-size: 14px;
+  }
+
+  /* Smaller Text */
+  #instructions h1,
+  #about-me-container h1 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+
+  /* Tiny Adjustments */
   #runner, #main-menu-blur-runner {
     width: 160px;
     bottom: 18vh;
   }
-
-  /* Menu Adjustments */
-  #pixel-menu {
-    gap: 8px;
-    padding: 0 12px;
-    height: 65px;
-  }
   
-  #pixel-menu img {
-    height: 55px;
+  #start-btn img, #restart-btn img {
+    width: 200px;
   }
 }
 
-/* ===== ABOUT ME PAGE MOBILE STYLES ===== */
+/* ===== ABOUT ME MOBILE RUNNER ===== */
 @media (max-width: 768px) {
-  #about-me-container {
-    top: 50% !important;
-    max-height: 75vh !important;
-    padding: 20px !important;
-    transform: translate(-50%, -50%) !important;
-    overflow-y: auto !important;
-  }
-
-  /* Text Sizing */
-  #about-me-container h1 {
-    font-size: 1.3rem !important;
-    margin-bottom: 15px !important;
-  }
-  
-  #about-me-container h2 {
-    font-size: 1.1rem !important;
-    margin-bottom: 15px !important;
-  }
-
-  /* Info Items */
-  .info-item {
-    font-size: 0.9rem !important;
-    margin-bottom: 10px !important;
-  }
-
-  /* Coding Languages */
-  .coding-languages {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-  }
-
-  .language-icon {
-    width: 32px !important;
-    height: 32px !important;
-  }
-
-  /* Mobile Runner */
   #about-me-runner-mobile {
-    width: 150px !important;
-    margin: 15px auto !important;
+    width: 150px;
+    margin: 15px auto;
   }
-
+  
   #monster-prompt-mobile {
-    display: block !important;
-    width: 110px;
+    width: 120px;
     font-size: 12px;
-    margin-top: 8px;
+    margin: 8px auto 0;
   }
 }
 
-/* ===== CONTACT PAGE MOBILE STYLES ===== */
+/* ===== GLOBAL MOBILE OVERRIDES ===== */
 @media (max-width: 768px) {
-  #contact-menu {
-    padding-top: 100px;
-  }
-
-  #contact-content {
-    padding: 20px;
-    margin: 20px auto;
-  }
-
-  .contact-item {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .social-icons {
-    gap: 20px;
-  }
-}
-
-/* ===== UTILITY CLASSES FOR MOBILE ===== */
-@media (max-width: 768px) {
-  .mobile-hidden {
-    display: none !important;
+  body {
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
   }
   
-  .mobile-visible {
-    display: block !important;
-  }
-  
-  .mobile-flex {
-    display: flex !important;
+  * {
+    user-select: none;
+    -webkit-user-select: none;
   }
 }
