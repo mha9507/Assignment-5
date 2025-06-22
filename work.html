@@ -344,6 +344,23 @@ body {
 }
 
 @media (max-width: 600px) {
+  .scrolling-container {
+    padding-top: 30px !important;
+    height: calc(100vh - 30px);
+  }
+
+  .projects-wrapper {
+    height: calc(100vh - 30px);
+  }
+
+  /* Maintain runner position */
+  .runner {
+    width: 200px;
+    bottom: calc(25vh + 30px);
+    left: 40px;
+  }
+
+  /* Menu adjustments */
   #pixel-menu {
     gap: 15px;
   }
@@ -352,67 +369,61 @@ body {
     height: 100px;
   }
   
-  .scrolling-container {
-    padding-top: 30px;
-  }
-  
-  /* Standardized to match "With Every Stroke, A Story" */
+  /* Project card styling */
   .project-card {
     padding: 18px;
-    min-height: 68vh !important; /* Exact match */
+    min-height: 68vh !important;
     margin-top: 10px;
     width: 96%;
     justify-content: space-between;
   }
   
   .project-card h2 {
-    font-size: 1.15rem; /* Reduced */
-    margin: 8px 0 12px 0; /* Tighter spacing */
+    font-size: 1.15rem;
+    margin: 8px 0 12px 0;
     line-height: 1.4;
   }
   
   .project-card p {
-    font-size: 13px; /* Reduced */
+    font-size: 13px;
     line-height: 1.5;
     margin-bottom: 15px;
   }
 
+  /* Image container with reduced space to tap label */
   .project-card .image-container {
-    min-height: 36vh; /* Matches reference */
-    margin-bottom: 15px;
+    min-height: 36vh;
+    margin-bottom: 10px; /* Reduced from 15px */
   }
 
   .project-card img {
     max-width: 92%;
-    max-height: 32vh; /* Reference proportions */
+    max-height: 32vh;
     width: auto;
     transform: none !important;
   }
 
-  .runner {
-    width: 200px;
-    bottom: 25vh;
-  }
-
+  /* Tap label positioned closer to image */
   .project-card .image-container::after {
     content: "TAP TO VIEW →";
     font-size: 11px;
-    padding: 6px 12px;
-    bottom: -18px;
+    padding: 5px 10px; /* Slightly smaller padding */
+    bottom: -12px; /* Moved up from -18px */
   }
   
   .project-card .image-container:hover::after {
-    bottom: -15px;
+    bottom: -10px; /* Moved up from -15px */
   }
 }
-
 @media (max-width: 450px) {
+  /* Runner positioning - unchanged */
   .runner {
     width: 180px;
     bottom: 22vh;
     left: 20px;
   }
   
+  /* Pixel menu adjustments */
   #pixel-menu {
     gap: 10px;
     padding: 0 10px;
@@ -423,32 +434,41 @@ body {
     height: 70px;
   }
   
+  /* Main container adjustments */
   .scrolling-container {
-    padding-top: 55px;
+    padding-top: 40px; /* Reduced from 55px to move content up */
+    height: calc(100vh - 40px);
+  }
+
+  .projects-wrapper {
+    height: calc(100vh - 40px);
   }
   
+  /* Project card styling */
   .project-card {
     padding: 15px;
-    min-height: 65vh !important; /* Slightly smaller */
-    margin-top: 12px;
+    min-height: 65vh !important;
+    margin-top: 8px; /* Reduced from 12px */
     width: 94%;
   }
   
   .project-card h2 {
-    font-size: 1.05rem; /* Smaller */
+    font-size: 1.05rem;
     margin: 6px 0 10px 0;
   }
   
   .project-card p {
-    font-size: 12px; /* Smaller */
+    font-size: 12px;
     line-height: 1.5;
   }
   
+  /* Navigation arrows */
   .nav-arrow {
     width: 35px;
     height: 35px;
   }
 
+  /* Image adjustments */
   .project-card img {
     max-width: 92%;
     max-height: 30vh;
@@ -456,20 +476,23 @@ body {
 
   .project-card .image-container {
     min-height: 34vh;
+    margin-bottom: 10px; /* Added for better spacing */
   }
 
+  /* Tap label positioning - moved closer */
   .project-card .image-container::after {
     content: "TAP →";
     font-size: 9px;
-    padding: 5px 10px;
-    bottom: -15px;
+    padding: 4px 8px; /* Reduced padding */
+    bottom: -10px; /* Moved up from -15px */
   }
   
   .project-card .image-container:hover::after {
-    bottom: -12px;
+    bottom: -8px; /* Moved up from -12px */
   }
 }
 
+/* Scrollbar hiding - moved outside media query since it's global */
 .scrolling-container::-webkit-scrollbar {
   display: none;
 }
