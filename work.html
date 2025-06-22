@@ -6,7 +6,6 @@
   <title>My Work - 5 Project Scroller</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
-
 * {
   margin: 0;
   padding: 0;
@@ -321,11 +320,26 @@ body {
   }
 }
 
+/* ===== MOBILE STYLES (MATCHING INDEX.HTML) ===== */
 @media (max-width: 768px) {
-  .scrolling-container {
-    padding-top: 50px;
+  /* 1. LARGER MENU BUTTONS */
+  #pixel-menu {
+    height: 90px;
+    padding: 0 10px;
+    gap: 10px;
+  }
+  
+  #pixel-menu img {
+    height: 85px !important;
+    margin: 0 -8px;
   }
 
+  /* Project container adjustments */
+  .scrolling-container {
+    padding-top: 90px;
+  }
+
+  /* Project card content */
   .project-card h2 {
     white-space: normal;
     border-right: none;
@@ -342,41 +356,43 @@ body {
   .project-card img {
     max-width: 88%;
   }
+
+  /* Runner adjustments */
+  .runner {
+    width: 170px;
+    bottom: 22vh;
+    left: 20px;
+  }
 }
 
 @media (max-width: 600px) {
-  .scrolling-container {
-    padding-top: 30px !important;
-    height: calc(100vh - 30px);
-  }
-
-  .projects-wrapper {
-    height: calc(100vh - 30px);
-  }
-
-  /* Maintain runner position */
-  .runner {
-    width: 200px;
-    bottom: calc(25vh + 30px);
-    left: 40px;
-  }
-
   /* Menu adjustments */
   #pixel-menu {
-    gap: 15px;
+    height: 90px;
+    padding: 0 10px;
+    gap: 8px;
   }
   
   #pixel-menu img {
-    height: 100px;
+    height: 85px !important;
   }
-  
+
+  /* Main container adjustments */
+  .scrolling-container {
+    padding-top: 90px;
+    height: calc(100vh - 90px);
+  }
+
+  .projects-wrapper {
+    height: calc(100vh - 90px);
+  }
+
   /* Project card styling */
   .project-card {
     padding: 18px;
     min-height: 68vh !important;
     margin-top: 10px;
     width: 96%;
-    justify-content: space-between;
   }
   
   .project-card h2 {
@@ -391,10 +407,10 @@ body {
     margin-bottom: 15px;
   }
 
-  /* Image container with reduced space to tap label */
+  /* Image container */
   .project-card .image-container {
     min-height: 36vh;
-    margin-bottom: 10px; /* Reduced from 15px */
+    margin-bottom: 10px;
   }
 
   .project-card img {
@@ -404,52 +420,46 @@ body {
     transform: none !important;
   }
 
-  /* Tap label positioned closer to image */
+  /* Tap label */
   .project-card .image-container::after {
     content: "TAP TO VIEW →";
     font-size: 11px;
-    padding: 5px 10px; /* Slightly smaller padding */
-    bottom: -12px; /* Moved up from -18px */
+    padding: 5px 10px;
+    bottom: -12px;
   }
   
   .project-card .image-container:hover::after {
-    bottom: -10px; /* Moved up from -15px */
+    bottom: -10px;
   }
 }
+
 @media (max-width: 450px) {
-  /* Runner positioning - unchanged */
-  .runner {
-    width: 180px;
-    bottom: 22vh;
-    left: 20px;
-  }
-  
   /* Pixel menu adjustments */
   #pixel-menu {
-    gap: 10px;
-    padding: 0 10px;
-    height: 70px;
+    height: 80px;
+    padding: 0 8px;
+    gap: 6px;
   }
   
   #pixel-menu img {
-    height: 70px;
+    height: 75px !important;
   }
-  
+
   /* Main container adjustments */
   .scrolling-container {
-    padding-top: 40px; /* Reduced from 55px to move content up */
-    height: calc(100vh - 40px);
+    padding-top: 80px;
+    height: calc(100vh - 80px);
   }
 
   .projects-wrapper {
-    height: calc(100vh - 40px);
+    height: calc(100vh - 80px);
   }
   
   /* Project card styling */
   .project-card {
     padding: 15px;
     min-height: 65vh !important;
-    margin-top: 8px; /* Reduced from 12px */
+    margin-top: 8px;
     width: 94%;
   }
   
@@ -477,23 +487,33 @@ body {
 
   .project-card .image-container {
     min-height: 34vh;
-    margin-bottom: 10px; /* Added for better spacing */
+    margin-bottom: 10px;
   }
 
-  /* Tap label positioning - moved closer */
+  /* Tap label */
   .project-card .image-container::after {
     content: "TAP →";
     font-size: 9px;
-    padding: 4px 8px; /* Reduced padding */
-    bottom: -10px; /* Moved up from -15px */
+    padding: 4px 8px;
+    bottom: -10px;
   }
   
   .project-card .image-container:hover::after {
-    bottom: -8px; /* Moved up from -12px */
+    bottom: -8px;
   }
 }
 
-/* Scrollbar hiding - moved outside media query since it's global */
+/* ===== GLOBAL MOBILE OVERRIDES ===== */
+@media (max-width: 768px) {
+  /* Disable hover effects on touch devices */
+  @media (hover: none) {
+    #pixel-menu img:hover {
+      transform: none !important;
+    }
+  }
+}
+
+/* Scrollbar hiding */
 .scrolling-container::-webkit-scrollbar {
   display: none;
 }
