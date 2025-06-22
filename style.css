@@ -890,9 +890,9 @@ html, body {
 @media (max-width: 768px) {
   /* Main Layout Adjustments */
   #runner, #main-menu-blur-runner {
-    width: 120px;
-    bottom: 120px;
-    left: 30px;
+    width: 180px;
+    bottom: 22vh;
+    left: 20px;
   }
 
 
@@ -979,8 +979,8 @@ html, body {
 
   /* Adjust mobile runner size */
   #about-me-runner-mobile {
-    width: 80px !important;
-    height: auto !important;
+    width: 120px !important;
+    height: 120px !important;
   }
 
   /* Make grid layout more compact */
@@ -1014,13 +1014,13 @@ html, body {
 
   /* Game elements */
   #coin, #bomb { 
-    width: 25px; 
-    height: 25px; 
+    width: 50px; 
+    height: 50px; 
   }
   
   #fly { 
-    width: 35px; 
-    height: 35px; 
+    width: 70px; 
+    height: 70px; 
   }
 
   /* Buttons */
@@ -1240,7 +1240,7 @@ html, body {
 @media (max-width: 768px) {
   /* Adjust main menu positioning */
   #main-menu {
-    padding-top: 180px; /* Push content down */
+    padding-top: 80px; /* Push content down */
     justify-content: flex-start;
     gap: 15px;
   }
@@ -1259,7 +1259,7 @@ html, body {
   /* Instructions box styling */
   #instructions {
     width: 92%; /* Slightly wider */
-    margin: 80px auto 20px auto; /* Pushed downward with top margin */
+    margin: 40px auto 20px auto; /* Pushed downward with top margin */
     padding: 20px 16px 16px 16px; /* Adjusted padding */
     font-size: 14px;
     background-color: rgba(255, 255, 255, 0.65);
@@ -1345,5 +1345,7 @@ html, body {
     width: 42px;
     height: 42px;
   }
+
+}
 
 }
