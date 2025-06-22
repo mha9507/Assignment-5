@@ -845,169 +845,176 @@ html, body {
 
 
 
-
-
 /* ===== COMPLETE MOBILE CSS (PHONES) ===== */
 @media (max-width: 768px) {
-  /* 1. ENLARGED MENU BAR */
+  /* 1. LARGER MENU BUTTONS */
   #pixel-menu {
-    height: 90px;
-    padding: 0 25px;
-    gap: 18px;
-    top: 15px;
+    height: 90px; /* Slightly taller menu bar */
+    padding: 0 10px; /* Adjusted padding */
   }
   
   #pixel-menu img {
-    height: 80px;
+    height: 85px !important; /* Bigger buttons */
+    width: auto;
     image-rendering: pixelated;
+    margin: 0 -8px; /* Allow slight overlap */
+    transition: transform 0.2s;
   }
 
-  /* 2. UNIFIED CONTENT BOXES */
-  #instructions,
-  #about-me-container,
-  #contact-content {
-    width: 90%;
-    max-width: 440px;
-    min-height: 300px;
-    padding: 25px;
-    margin: 85px auto 30px auto;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 18px;
-    border: 3px solid #5a2a83;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    font-size: 15px;
+  #pixel-menu img:hover {
+    transform: scale(1.1);
   }
 
-  /* Home Page - Instructions Box */
-  #instructions {
-    margin-top: 90px;
+  /* 2. MAIN MENU ADJUSTMENTS */
+  #main-menu {
+    padding-top: 90px;
+    gap: 20px;
   }
-  
+
+  /* Loading text adjustments */
   #instructions h1 {
-    font-size: 1.4rem;
-    margin-bottom: 22px;
-    line-height: 1.4;
+    font-size: 1.1rem !important;
+    margin: 0 0 18px 0 !important;
+    line-height: 1.3;
+    padding: 0 5px;
   }
 
-  /* About Me Page */
-  #about-me-container {
-    margin-top: 85px;
-    max-height: 68vh;
-    overflow-y: auto;
-  }
-  
-  #about-me-container h1 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
+  /* Instructions box sizing */
+  #instructions {
+    width: 92%;
+    min-height: 270px;
+    padding: 20px 15px;
+    margin: 30px auto 20px auto;
+    font-size: 14px;
   }
 
-  /* Shared Content Styles */
-  #instructions ul li,
-  .info-item,
-  .contact-item {
-    margin-bottom: 14px;
-    line-height: 1.6;
+  #instructions ul li {
+    margin-bottom: 10px;
+    font-size: 13px;
   }
 
-  /* 3. GAME ELEMENTS */
+  /* Game elements */
   #runner, #main-menu-blur-runner {
-    width: 180px;
+    width: 170px;
     bottom: 22vh;
-    left: 25px;
+    left: 20px;
   }
 
   #coin, #bomb { 
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px; 
   }
   
   #fly { 
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px; 
   }
 
-  /* 4. BUTTONS */
-  #start-btn img, #restart-btn img {
-    width: 220px;
+  /* 3. ABOUT ME PAGE ADJUSTMENTS */
+  #about-me-container {
+    max-height: 78vh !important;
+    padding: 18px !important;
+    overflow-y: auto;
   }
 
-  /* 5. HIDE/SHOW ELEMENTS */
+  #about-me-container h1 {
+    font-size: 1.1rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  #about-me-container h2 {
+    font-size: 0.95rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .info-item {
+    font-size: 0.8rem !important;
+    margin-bottom: 8px !important;
+    line-height: 1.4;
+  }
+
+  .coding-languages {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .language-item {
+    font-size: 0.75rem !important;
+  }
+
+  .language-icon {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  /* Mobile runner adjustments */
+  #mobile-runner-container {
+    margin: 15px 0;
+  }
+
+  #about-me-runner-mobile {
+    width: 140px;
+    margin: 8px auto;
+  }
+
+  /* Hide desktop elements */
   #name-display, 
   .prominent-name,
   #about-me-runner {
     display: none !important;
   }
-  
-  #mobile-runner-container {
-    display: block;
-  }
 }
 
 /* ===== SMALL PHONES (<= 380px) ===== */
 @media (max-width: 380px) {
-  /* More Compact Layout */
-  #pixel-menu {
-    height: 80px;
-    padding: 0 20px;
-    gap: 15px;
-  }
-  
+  /* Even more compact layout */
   #pixel-menu img {
-    height: 70px;
+    height: 75px !important;
   }
 
-  /* Slightly Smaller Boxes */
-  #instructions,
-  #about-me-container,
-  #contact-content {
-    width: 92%;
-    min-height: 280px;
-    padding: 20px;
-    margin-top: 75px;
-    font-size: 14px;
+  #instructions {
+    min-height: 250px;
+    padding: 18px 12px;
+    font-size: 13px;
   }
 
-  /* Smaller Text */
-  #instructions h1,
-  #about-me-container h1 {
-    font-size: 1.3rem;
-    margin-bottom: 18px;
+  #instructions h1 {
+    font-size: 1rem !important;
   }
 
-  /* Tiny Adjustments */
+  /* About me page ultra-compact */
+  #about-me-container {
+    max-height: 82vh !important;
+    padding: 15px 12px !important;
+  }
+
+  .info-item {
+    font-size: 0.75rem !important;
+  }
+
+  .coding-languages {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Smaller game elements */
   #runner, #main-menu-blur-runner {
-    width: 160px;
-    bottom: 18vh;
-  }
-  
-  #start-btn img, #restart-btn img {
-    width: 200px;
-  }
-}
-
-/* ===== ABOUT ME MOBILE RUNNER ===== */
-@media (max-width: 768px) {
-  #about-me-runner-mobile {
     width: 150px;
-    margin: 15px auto;
-  }
-  
-  #monster-prompt-mobile {
-    width: 120px;
-    font-size: 12px;
-    margin: 8px auto 0;
+    bottom: 18vh;
   }
 }
 
 /* ===== GLOBAL MOBILE OVERRIDES ===== */
 @media (max-width: 768px) {
-  body {
-    -webkit-text-size-adjust: 100%;
-    touch-action: manipulation;
+  /* Disable hover effects on touch devices */
+  @media (hover: none) {
+    #pixel-menu img:hover {
+      transform: none !important;
+    }
   }
-  
-  * {
-    user-select: none;
-    -webkit-user-select: none;
+
+  /* Prevent zooming on input */
+  input, select, textarea {
+    font-size: 16px !important;
   }
 }
