@@ -42,25 +42,46 @@
       <img src="media/runner.gif" alt="Running character blurred" />
     </div>
     
-    <div id="contact-content">
-      <h2>GET IN TOUCH</h2>
-      <div class="contact-item">
-        <i class="fas fa-envelope"></i>
-        <span>Email: <a href="mailto:your-email@example.com">mha9507@nyu.edu</a></span>
-      </div>
-      <div class="social-section">
-        <h3>FIND ME ON:</h3>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/share/1AbWtmwfsa/?mibextid=wwXIfr" target="_blank">
-            <i class="fab fa-facebook-square"></i>
-          </a>
-          <a href="https://www.instagram.com/mhz_398/" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-      </div>
+<div id="contact-content">
+  <h2>GET IN TOUCH</h2>
+  
+  <!-- Social Section -->
+  <div class="social-section">
+    <h3>FIND ME ON:</h3>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/1AbWtmwfsa/?mibextid=wwXIfr" target="_blank">
+        <i class="fab fa-facebook-square"></i>
+      </a>
+      <a href="https://www.instagram.com/mhz_398/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://github.com/mha9507" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
     </div>
   </div>
+
+  <!-- Divider WITH proper spacing -->
+  <div class="divider" style="margin: 30px 0;"></div>
+
+
+
+<form action="https://formspree.io/f/mnnvgapr" method="POST" class="contact-form">
+  <h3>SEND ME A MESSAGE</h3>
+  <input type="text" name="name" placeholder="Your Name" class="pixel-input" required>
+  <input type="email" name="_replyto" placeholder="Your Email" class="pixel-input" required>
+  <textarea name="message" placeholder="Your Message" class="pixel-textarea" required></textarea>
+  
+  <!-- Hidden fields for better organization -->
+  <input type="hidden" name="_subject" value="New message from your website!">
+  <input type="hidden" name="_format" value="plain">
+  
+  <button type="submit" class="pixel-button">SEND <i class="fas fa-paper-plane"></i></button>
+  
+  <!-- Success/Error messages (will appear after submit) -->
+  <div class="form-alert" style="display:none; margin-top:20px; padding:10px; border-radius:8px;"></div>
+</form>
+
 
   <div id="score">Score: 0</div>
   <div id="popup-message"></div>
