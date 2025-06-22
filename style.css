@@ -890,8 +890,8 @@ html, body {
 @media (max-width: 768px) {
   /* Main Layout Adjustments */
   #runner, #main-menu-blur-runner {
-    width: 180px;
-    bottom: 22vh;
+    width: 195px;
+    bottom: 20vh;
     left: 20px;
   }
 
