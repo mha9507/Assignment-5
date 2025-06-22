@@ -899,247 +899,268 @@ html, body {
   animation: mobilePulse 1.5s infinite;
 }
 
-/* ===== MOBILE RESPONSIVE ADJUSTMENTS ===== */
+
+
+/* ===== MOBILE-FIRST STYLES (PHONES) ===== */
 @media (max-width: 768px) {
-  /* Main Layout Adjustments */
+  /* Global Reset for Mobile */
+  * {
+    touch-action: manipulation;
+  }
+
+  /* Layout Structure */
+  body, html {
+    overflow-x: hidden;
+    overscroll-behavior: none;
+  }
+
+  /* Main Menu Container */
+  #main-menu {
+    padding-top: 80px;
+    justify-content: flex-start;
+    gap: 25px;
+    min-height: 100vh;
+  }
+
+  /* Instructions Box - Enhanced Version */
+  #instructions {
+    width: 90%;
+    margin: 40px auto 25px auto;
+    padding: 28px 20px;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 18px;
+    border: 3px solid #5a2a83;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    max-width: 450px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Title Styling */
+  #instructions h1 {
+    font-size: 1.5rem;
+    margin: 0 0 28px 0;
+    padding: 0;
+    color: #5a2a83;
+    text-shadow: 2px 2px #fff;
+    line-height: 1.4;
+  }
+
+  /* List Items */
+  #instructions ul {
+    margin: 0 auto;
+    width: 95%;
+    padding-left: 0;
+  }
+
+  #instructions ul li {
+    margin-bottom: 14px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  /* Icons */
+  .instruction-icon {
+    width: 38px;
+    height: 38px;
+    margin: 0 8px;
+  }
+  
+  .fly-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* Game Elements */
   #runner, #main-menu-blur-runner {
     width: 180px;
-    bottom: 22vh; /* Moved runner higher up */
+    bottom: 22vh;
     left: 20px;
+  }
+
+  #coin, #bomb { 
+    width: 42px;
+    height: 42px;
+  }
+  
+  #fly { 
+    width: 62px;
+    height: 62px;
+  }
+
+  #tornado {
+    width: 68px;
+    height: 68px;
+  }
+
+  /* Buttons */
+  #start-btn img, #restart-btn img {
+    width: 200px;
   }
 
   /* Menu Bar */
   #pixel-menu {
-    top: 10px;
-    gap: 10px;
-    padding: 0 15px;
-    height: 70px;
+    top: 12px;
+    gap: 12px;
+    padding: 0 18px;
+    height: 75px;
   }
   
   #pixel-menu img {
-    height: 60px;
+    height: 65px;
   }
 
-  /* Hide name on mobile */
-  #name-display, .prominent-name {
+  /* Hide desktop elements */
+  #name-display, .prominent-name,
+  #about-me-runner {
     display: none !important;
   }
 
-  /* Main Menu Content */
-  #main-menu {
-    padding-top: 80px;
+  /* Show mobile elements */
+  #mobile-runner-container {
+    display: block;
+  }
+}
+
+/* ===== SMALL PHONES (<= 380px) ===== */
+@media (max-width: 380px) {
+  /* Compact Instructions Box */
+  #instructions {
+    min-height: 330px;
+    padding: 22px 16px;
+    margin: 30px auto 20px auto;
+    font-size: 14px;
   }
 
-  #main-menu h1 {
-    font-size: 24px;
-    padding: 10px;
-    margin: 5px 0;
+  #instructions h1 {
+    font-size: 1.3rem;
+    margin-bottom: 22px;
   }
 
-  /* About Me Container */
+  #instructions ul li {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .instruction-icon {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .fly-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Smaller Game Elements */
+  #runner, #main-menu-blur-runner {
+    width: 160px;
+    bottom: 18vh;
+  }
+
+  /* Menu Adjustments */
+  #pixel-menu {
+    gap: 8px;
+    padding: 0 12px;
+    height: 65px;
+  }
+  
+  #pixel-menu img {
+    height: 55px;
+  }
+}
+
+/* ===== ABOUT ME PAGE MOBILE STYLES ===== */
+@media (max-width: 768px) {
   #about-me-container {
     top: 50% !important;
-    max-height: 70vh !important;
-    padding: 15px !important;
+    max-height: 75vh !important;
+    padding: 20px !important;
     transform: translate(-50%, -50%) !important;
     overflow-y: auto !important;
   }
 
   /* Text Sizing */
   #about-me-container h1 {
-    font-size: 1.1rem !important;
-    margin-bottom: 10px !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 15px !important;
   }
   
   #about-me-container h2 {
-    font-size: 1rem !important;
-    margin-bottom: 10px !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 15px !important;
   }
 
   /* Info Items */
   .info-item {
-    font-size: 0.8rem !important;
-    margin-bottom: 8px !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 10px !important;
   }
 
   /* Coding Languages */
-  .language-item {
-    font-size: 0.8rem !important;
+  .coding-languages {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
   }
 
   .language-icon {
-    width: 30px !important;
-    height: 30px !important;
+    width: 32px !important;
+    height: 32px !important;
   }
 
-  /* Mobile Runner Elements */
-  #about-me-runner {
-    display: none !important;
-  }
-  
-  #mobile-runner-container {
-    display: block;
-  }
-
+  /* Mobile Runner */
   #about-me-runner-mobile {
-    width: 160px !important;
-    height: auto !important;
+    width: 150px !important;
+    margin: 15px auto !important;
   }
 
   #monster-prompt-mobile {
     display: block !important;
-    opacity: 1 !important;
-    font-size: 10px !important;
+    width: 110px;
+    font-size: 12px;
+    margin-top: 8px;
   }
+}
 
-  #about-me-runner-mobile.clicked + #monster-prompt-mobile {
-    display: none !important;
-  }
-
-  /* Game Elements */
-  #coin, #bomb { 
-    width: 40px !important; 
-    height: 40px !important; 
-  }
-  
-  #fly { 
-    width: 60px !important; 
-    height: 60px !important; 
-  }
-
-  #tornado {
-    width: 65px !important;
-    height: 65px !important;
-  }
-
-  /* Buttons */
-  #start-btn img, #restart-btn img {
-    width: 180px;
-  }
-
-  /* Popup Message */
-  #popup-message {
-    font-size: 14px;
-    bottom: 120px;
-  }
-
-  /* Main Menu Layout */
-  #main-menu {
+/* ===== CONTACT PAGE MOBILE STYLES ===== */
+@media (max-width: 768px) {
+  #contact-menu {
     padding-top: 100px;
-    justify-content: flex-start;
-    gap: 13px;
   }
 
-  /* Instructions Box */
-  #instructions {
-    width: 92%;
-    margin: 60px auto 20px auto;
-    padding: 20px 16px 16px 16px;
-    font-size: 14px;
-    background-color: rgba(255, 255, 255, 0.65);
-    border-radius: 14px;
-    border: 2px solid #5a2a83;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    max-width: 420px;
+  #contact-content {
+    padding: 20px;
+    margin: 20px auto;
   }
 
-  #instructions h1 {
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 0 15px 0 !important;
-    color: #5a2a83;
-    text-shadow: 2px 2px #fff;
-    font-size: 24px;
+  .contact-item {
+    flex-direction: column;
+    gap: 5px;
   }
 
-  /* Instruction Icons */
-  .instruction-icon {
-    width: 32px;
-    height: 32px;
-    margin: 0 6px;
-  }
-  
-  .fly-icon {
-    width: 48px;
-    height: 48px;
+  .social-icons {
+    gap: 20px;
   }
 }
 
-/* Ultra-Small Devices (<= 380px) */
-@media (max-width: 380px) {
-  #runner, #main-menu-blur-runner {
-    width: 150px !important;
-    bottom: 18vh !important; /* Moved even higher on tiny screens */
-  }
-
-  #about-me-container {
-    max-height: 65vh !important;
-    padding: 10px !important;
-  }
-
-  #about-me-container h1 {
-    font-size: 1rem !important;
-  }
-  
-  #about-me-container h2 {
-    font-size: 0.9rem !important;
-  }
-
-  .info-item {
-    font-size: 0.7rem !important;
-  }
-
-  .language-item {
-    font-size: 0.7rem !important;
-  }
-
-  .coding-languages {
-    grid-template-columns: 1fr !important;
-  }
-
-  #about-me-runner-mobile {
-    width: 120px !important;
-  }
-
-  /* Main Menu Adjustments */
-  #main-menu {
-    padding-top: 50px;
-    gap: 10px;
-  }
-
-  #instructions {
-    width: 88%;
-    margin: 20px auto 10px auto;
-    padding: 14px;
-    font-size: 13px;
-    border-radius: 12px;
-  }
-
-  #instructions h1 {
-    font-size: 1.1rem !important;
-    margin-bottom: 10px !important;
-  }
-
-  .instruction-icon {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .fly-icon {
-    width: 42px;
-    height: 42px;
-  }
-}
-
-/* Desktop-Only Elements (>= 769px) */
-@media (min-width: 769px) {
-  #mobile-runner-container {
+/* ===== UTILITY CLASSES FOR MOBILE ===== */
+@media (max-width: 768px) {
+  .mobile-hidden {
     display: none !important;
   }
-
-  #monster-prompt-mobile {
-    display: none !important;
+  
+  .mobile-visible {
+    display: block !important;
+  }
+  
+  .mobile-flex {
+    display: flex !important;
   }
 }
