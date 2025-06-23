@@ -1112,7 +1112,36 @@ html, body {
   input, select, textarea {
     font-size: 16px !important;
   }
-  /* ===== GAME INSTRUCTIONS MOBILE FIX ===== */
+/* Fix text overflow and layout */
+@media (max-width: 768px) {
+  /* For About Me section */
+  #about-me-container {
+    overflow: visible !important;
+    padding: 15px !important;
+  }
+  
+  .info-item {
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+  
+  /* Ensure "Computer Science" shows completely */
+  .info-item:nth-child(4) { /* Targets Degree line */
+    white-space: normal !important;
+  }
+
+  /* For Game Instructions */
+  #instructions {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  
+  #instructions li {
+    white-space: normal !important;
+    text-align: left !important;
+  }
+  
+/* ===== GAME INSTRUCTIONS MOBILE FIX ===== */
 @media (max-width: 768px) {
   #instructions {
     text-align: center;
